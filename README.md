@@ -6,8 +6,8 @@ group5.k57ca
 * Overview Description:
   This is a web-based application provides user following services:
   - View the traffic map of Ha Noi
-  - Find routes, bus
-  - Subscribes the road condition, traffic bandwidth, weather condition
-  - View the history of traffic condition among months
+  - Find routes, buses
+  - Subscribes to the current road, weather condition and also traffic bandwidth
+  - View the statistic of traffic condition among months
   - Provides and shares the traffic data (optional)
   - Other features is in planning
