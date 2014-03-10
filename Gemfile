@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+source "http://gems.github.com"
+ruby "1.9.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0.rc1'
@@ -33,7 +34,15 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+
+group :test, :development do
+	gem 'rspec-rails', "~>2.14"
+end
+
+group :test do
+	gem 'capybara', "2.1.0"
+end
