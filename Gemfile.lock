@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: http://gems.github.com/
   specs:
     actionmailer (4.1.0.rc1)
       actionpack (= 4.1.0.rc1)
@@ -152,23 +153,16 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-<<<<<<< HEAD
+  bootstrap-sass
   capybara (= 2.1.0)
   coffee-rails (~> 4.0.0)
   debugger
-  jbuilder (~> 2.0)
-  jquery-rails
-  rails (= 4.1.0.rc1)
-  rspec-rails (~> 2.14)
-
-  bootstrap-sass
-  coffee-rails (~> 4.0.0)
   font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.0.rc1)
   rails_layout
-
+  rspec-rails (~> 2.14)
   sass-rails (~> 4.0.1)
   sdoc (~> 0.4.0)
   sqlite3
