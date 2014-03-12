@@ -9,12 +9,13 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
+     <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Home</a>
+    </div>
+  </div>
+
+  
+<%= yield %>
   </body>
 </html>

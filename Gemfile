@@ -46,12 +46,3 @@ end
 group :test do
 	gem 'capybara', "2.1.0"
 end
-
-# Add bootstrap for designing website
-gem 'bootstrap-sass'
-gem 'font-awesome-rails'
-
-group :development do
-  gem 'rails_layout'
-
-end
