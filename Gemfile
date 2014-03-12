@@ -39,10 +39,19 @@ gem 'debugger', group: [:development, :test]
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
+<<<<<<< HEAD
 group :test, :development do
 	gem 'rspec-rails', "~>2.14"
 end
 
 group :test do
 	gem 'capybara', "2.1.0"
+
+# Add bootstrap for designing website
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
+
+group :development do
+  gem 'rails_layout'
+
 end
