@@ -14,18 +14,19 @@
       <a id="gc-logo" href="/">
         <%= image_tag "tqg.png" %>
       </a>
-      <form class="gc-search" role="search">
-        <div class="form-group" style="width: 467px">
-          <input type="text" class="form-control" placeholder='Search' autocomplete="on" />
+      <form class="gc-search form-inline" role="search">
+        <div class="form-group custom-searchbox" style="border-radius:0px;">
+          <label class="sr-only" for="exampleInputEmail2">Email address</label>
+          <input type="text" class="form-control custom-form" placeholder='Search' autocomplete="on" />
         </div>
-        <button type="button" class="btn btn-primary btn-lg">
-          <span class="glyphicon glyphicon-search"></span> 
-        </button>	
+        <button type="submit" class="btn btn-primary" style="width: 60px;">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
       </form>
     </div>
     
   	<!-- Navigation Bar -->
-    <nav class="navbar navbar-inverse" role="navigation">
+    <nav class="navbar navbar-inverse custom-navbar" role="navigation">
   	  <div class="container-fluid">
     	<div class="navbar-header">
       	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">

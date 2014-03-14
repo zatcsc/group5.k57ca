@@ -38,84 +38,22 @@
     position:absolute;
     left:270px;
     right:308px;
-    width:550px;
+    width:570px;
 }
-.gc-search .searchbox{
-    position:absolute;
-    left:0px;
-    right:81px;
-    background-color:#fff;
-    border:1px solid rgba(0,0,0,0.15);
-    border-top:1px solid rgba(0,0,0,0.25);
-    height:28px;
-    padding-left:4px;
-}
-.gc-search .searchbox:hover{
-    /*box-shadow*/
-    -webkit-box-shadow:rgba(0,0,0,0.3) 0 1px 2px inset;
-    -moz-box-shadow:rgba(0,0,0,0.3) 0 1px 2px inset;
-    box-shadow:rgba(0,0,0,0.3) 0 1px 2px inset;
-    border:1px solid #4d90fe;
-}
-.gc-search .searchbox .button.mini{
-    height:19px;
-    line-height:19px;
-    min-width:18px;
-    width:auto;
-}
-.gc-search .searchbox .button.left{
-    /*border-radius*/
-    -webkit-border-radius:4px 0 0 4px;
-    -moz-border-radius:4px 0 0 4px;
-    border-radius:4px 0 0 4px;
-    padding:0 4px 0 4px;
-}
-.gc-search .searchbox .button.right{
-    /*border-radius*/
-    -webkit-border-radius:0 4px 4px 0;
-    -moz-border-radius:0 4px 4px 0;
-    border-radius:0 4px 4px 0;
-    padding:0px;
-}
-.gc-search .searchbox .button.right span{
-    position:relative;
-    bottom:1px;
-    right:1px;
-}
-.gc-search .searchbox span.button.button-blue{
-    cursor:default;
-}
-.gc-search .searchbox span.button.button-blue pre{
-    background:none;
-    border:none;
-    color:white;
-    font:inherit;
-    display:inline;
-    padding:0;
-}
-.gc-search .searchbox input{
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box;
-    background-color:transparent;
-    border:0;
-    font-size:13px;
-    height:28px;
-    margin:0;
-    outline:none;
-    padding:5px 2px;
-    width:100%;
-}
-.gc-search button{
-    padding-top:0;
-    padding-bottom:1px;
-    position:absolute;
-    right:0;
-}
-.gc-search button img{
-    vertical-align:middle;
-    margin-top:-3px;
-}
+
 #search-full{
     font-size:10px;
+}
+
+.custom-navbar{
+    min-height : 35px !important;
+    margin-bottom: 0px !important;
+}
+
+.custom-searchbox{
+    width: 500px;
+}
+
+.custom-form{
+    width: 490px !important;
 }
