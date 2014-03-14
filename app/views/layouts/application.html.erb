@@ -9,6 +9,25 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <div id="gc-googlebar">
+      <a id="gc-logo" href="/">
+        <%= image_tag "tqg.png" %>
+      </a>
+
+      <form class="gc-search" method="GET">
+        <div class="searchbox">
+          <input type="text" name="q" class="q" id="q" value="" placeholder='Search' autocomplete="off" />
+        </div>
+        <button type="button" class="btn btn-primary">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
+
+        <input type="hidden" name="p" id="search_project" value="/maps/documentation/javascript" />
+
+      </form>
+    </div>
+
+
       <nav class="navbar navbar-inverse" role="navigation">
   		<div class="container-fluid">
     	  <div class="navbar-header">
