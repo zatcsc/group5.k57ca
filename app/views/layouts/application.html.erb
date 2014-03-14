@@ -9,48 +9,49 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div id="gc-googlebar">
+    <!-- Search Bar -->
+	<div id="gc-googlebar">
       <a id="gc-logo" href="/">
         <%= image_tag "tqg.png" %>
       </a>
-
-      <form class="gc-search" method="GET">
-        <div class="searchbox">
-          <input type="text" name="q" class="q" id="q" value="" placeholder='Search' autocomplete="off" />
+      <form class="gc-search" role="search">
+        <div class="form-group" style="width: 467px">
+          <input type="text" class="form-control" placeholder='Search' autocomplete="on" />
         </div>
         <button type="button" class="btn btn-primary btn-lg">
-          <span class="glyphicon glyphicon-search"></span>
-        </button>
-
-        <input type="hidden" name="p" id="search_project" value="/maps/documentation/javascript" />
-
+          <span class="glyphicon glyphicon-search"></span> 
+        </button>	
       </form>
     </div>
-
-
-      <nav class="navbar navbar-inverse" role="navigation">
-  		<div class="container-fluid">
-    	  <div class="navbar-header">
-      		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        	  <span class="sr-only">Toggle navigation</span>
-        	  <span class="icon-bar"></span>
-        	  <span class="icon-bar"></span>
-        	  <span class="icon-bar"></span>
-      		</button>
-      		<a class="navbar-brand" href="/welcome/index"><span class="glyphicon glyphicon glyphicon-home"></span> Hanoi Easy Traffic</a>
-    	  </div>
-    	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      		<ul class="nav navbar-nav">
-        	  <li><a href="/welcome/about">About</a></li>
-        	  <li><a href="#">Portfolio</a></li>
-        	  <li><a href="#">Contact</a></li>
-      		</ul>
-    	  </div><!-- /.navbar-collapse -->
-  		</div><!-- /.container-fluid -->
-	  </nav>
-	  <div class="alert alert-danger mar-alert">
-		<strong>Hold on!</strong> Our website is currently under development, stay tune for more info.
-	  </div>
-      <%= yield %>
+    
+  	<!-- Navigation Bar -->
+    <nav class="navbar navbar-inverse" role="navigation">
+  	  <div class="container-fluid">
+    	<div class="navbar-header">
+      	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        	<span class="sr-only">Toggle navigation</span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+      	  </button>
+      	  <a class="navbar-brand" href="/welcome/index">
+      	  	<span class="glyphicon glyphicon glyphicon-home"></span> Hanoi Easy Traffic
+      	  </a>
+    	</div>
+    	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      	  <ul class="nav navbar-nav">
+        	<li><a href="/welcome/about">About</a></li>
+        	<li><a href="#">Portfolio</a></li>
+        	<li><a href="#">Contact</a></li>
+      	  </ul>
+    	</div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+	</nav>
+	<div class="alert alert-danger mar-alert">
+	  <strong>Hold on!</strong> Our website is currently under development, stay tune for more info.
+	</div>
+    
+    <%= yield %>
+      
   </body>
 </html>
