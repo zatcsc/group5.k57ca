@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Hanoieasytraffic" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Hanoieasytraffic" %>">
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Hanoi Easy Traffic" %>">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
@@ -48,13 +48,14 @@
     	  </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-	  <div class="alert alert-danger alert-dismissable">
-	    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	    <strong>Hold on!</strong> Our website is currently under development, stay tune for more info.
-	  </div>
 	  
-	    
     <%= yield %>
-    
+
+    <div id="footer">
+      <div class="alertx alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>Hold on!</strong> Our website is currently under development, stay tune for more info.
+      </div>
+    </div>
   </body>
 </html>

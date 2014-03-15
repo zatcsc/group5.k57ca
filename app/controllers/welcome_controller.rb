@@ -6,4 +6,8 @@ class WelcomeController < ApplicationController
   def about
  
   end
+  
+  def map
+    render :layout => nil
+  end
 end
