@@ -94,6 +94,10 @@
   background-color: #428bca;
 }
 
+.custom-height-sidebar {
+    height: 535px;
+}
+
 /*
  * Main content
  */
