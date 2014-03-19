@@ -7,6 +7,8 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF8iBU12PVuIu03Xfp55ebFVehhNj_YAY&sensor=false&libraries=places"></script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <!-- Search Bar -->
@@ -17,14 +19,21 @@
       <form class="gc-search form-inline" role="search">
         <div class="form-group custom-searchbox" style="border-radius:0px;">
           <label class="sr-only" for="exampleInputEmail2">Email address</label>
-          <input id="searchBox" type="text" class="form-control custom-form" placeholder='Search' autocomplete="on" />
+          <input id="pac-input" type="text" class="form-control custom-form" placeholder='Search' autocomplete="on" />
         </div>
         <button type="submit" class="btn btn-primary" style="width: 60px;">
           <span class="glyphicon glyphicon-search"></span>
         </button>
       </form>
     </div>
-    
+
+    <script>
+        function initialize() {
+            var input = document.getElementById("pac-input");
+            var autocomplete = new google.maps.places.Autocomplete(input);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
   	<!-- Navigation Bar -->
     <nav class="navbar navbar-inverse custom-navbar" role="navigation">
   	  <div class="container-fluid">
