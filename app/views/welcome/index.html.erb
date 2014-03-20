@@ -1,18 +1,61 @@
+<script type='text/javascript'>
+    $(window).load(function(){
+        $.asm = {};
+        $.asm.panels = 1;
+
+        function sidebar(panels) {
+            $.asm.panels = panels;
+            if (panels === 1) {
+                //$('#content').removeClass('span9');
+                //$('#content').addClass('span12 no-sidebar');
+                $('#sidebar').hide();
+                $('iframe').removeClass('#mapCanvas').addClass('#mapCanvas-span');
+            } else if (panels === 2) {
+                //$('#content').removeClass('span12 no-sidebar');
+                //$('#content').addClass('span9');
+                $('iframe').removeClass('#mapCanvas-span').addClass('#mapCanvas');
+                $('#sidebar').show();
+                $('#mapCanvas').width($('#mapCanvas').parent().width());
+                $('#mapCanvas').height($(window).height() - 50);
+                $('#sidebar').height($(window).height() - 50);
+                return google.maps.event.trigger($.asm.theMap, 'resize');
+            }
+        };
+
+        $('#toggleSidebar').click(function() {
+            if ($.asm.panels === 1) {
+                $('i').addClass('glyphicon glyphicon-chevron-left');
+                $('i').removeClass('glyphicon glyphicon-chevron-right');
+                return sidebar(2);
+            } else {
+                $('i').removeClass('glyphicon glyphicon-chevron-left');
+                $('i').addClass('glyphicon glyphicon-chevron-right');
+                return sidebar(1);
+            }
+        });
+
+        $(function() {
+            $.asm.theMap = new google.maps.Map(document.getElementById('mapCanvas'));
+        });
+    });
+</script>
+
 <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-3 sidebar custom-height-sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Current feature</a></li>
-            <li><a href="#">Feature 1</a></li>
-            <li><a href="#">Feature 2</a></li>
-            <li><a href="#">Feature 3</a></li>
-            <li><a href="#">Feature 4</a></li>
-            <li><a href="#">Feature 5</a></li>
-            <li><a href="#">Feature 6</a></li>
-          </ul>
-        </div>
-        <div class="col-md-9 nopad">  
-          <iframe src="/welcome/map" width="1020" height='545px' frameBorder="0"></iframe>
-        </div>
-      </div>
+  <div class="row">
+    <div id="sidebar" class="col-md-3 sidebar custom-sidebar">
+      <ul class="nav nav-sidebar">
+        <li class="active"><a href="#">Current feature</a></li>
+        <li><a href="#">Feature 1</a></li>
+        <li><a href="#">Feature 2</a></li>
+        <li><a href="#">Feature 3</a></li>
+        <li><a href="#">Feature 4</a></li>
+        <li><a href="#">Feature 5</a></li>
+        <li><a href="#">Feature 6</a></li>
+      </ul>
     </div>
+    <a id="toggleSidebar" class="toggles"><i class="glyphicon glyphicon-chevron-left"></i></a>
+    <div class="col-md-9 nopad">
+      <iframe id="mapCanvas" src="../welcome/map"></iframe>
+    </div>
+  </div>
+</div>
