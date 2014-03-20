@@ -6,18 +6,16 @@
         function sidebar(panels) {
             $.asm.panels = panels;
             if (panels === 1) {
-                //$('#content').removeClass('span9');
-                //$('#content').addClass('span12 no-sidebar');
                 $('#sidebar').hide();
-                $('iframe').removeClass('#mapCanvas').addClass('#mapCanvas-span');
+                $('#map').removeClass('col-md-9')
+                $('#mapCanvas').width($('#mapCanvas').parent().width());
+                $('#mapCanvas').height($(window).height() - 150);
             } else if (panels === 2) {
-                //$('#content').removeClass('span12 no-sidebar');
-                //$('#content').addClass('span9');
-                $('iframe').removeClass('#mapCanvas-span').addClass('#mapCanvas');
+                $('#map').addClass('col-md-9')
                 $('#sidebar').show();
                 $('#mapCanvas').width($('#mapCanvas').parent().width());
-                $('#mapCanvas').height($(window).height() - 50);
-                $('#sidebar').height($(window).height() - 50);
+                $('#mapCanvas').height($(window).height() - 150);
+                $('#sidebar').height($(window).height() - 150);
                 return google.maps.event.trigger($.asm.theMap, 'resize');
             }
         };
@@ -42,7 +40,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div id="sidebar" class="col-md-3 sidebar custom-sidebar">
+    <div id="sidebar" class="col-md-3 sidebar">
       <ul class="nav nav-sidebar">
         <li class="active"><a href="#">Current feature</a></li>
         <li><a href="#">Feature 1</a></li>
@@ -54,7 +52,7 @@
       </ul>
     </div>
     <a id="toggleSidebar" class="toggles"><i class="glyphicon glyphicon-chevron-left"></i></a>
-    <div class="col-md-9 nopad">
+    <div id ="map" class="col-md-9 nopad">
       <iframe id="mapCanvas" src="../welcome/map"></iframe>
     </div>
   </div>
