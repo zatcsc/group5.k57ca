@@ -1,5 +1,7 @@
 <script type='text/javascript'>
     $(document).ready(function() {
+        $('#mapCanvas').width($('#mapCanvas').parent().width());
+        $('#mapCanvas').height($(window).height() - 150);
         $(".panel-heading")
                 .mouseover(function() {
                     $(this).addClass('mouseover');
@@ -19,9 +21,9 @@
         $.asm = {};
         $.asm.panels = 1;
         
-        $('#mapCanvas').width($('#mapCanvas').parent().width());
-        $('#mapCanvas').height($('#sidebar').parent().height() - 100);
-        $('#sidebar').height($('#sidebar').parent().height() - 100);
+        //$('#mapCanvas').width($('#mapCanvas').parent().width());
+        //$('#mapCanvas').height($('#sidebar').parent().height() - 100);
+        //$('#sidebar').height($('#sidebar').parent().height() - 100);
         
         function sidebar(panels) {
             $.asm.panels = panels;
@@ -35,7 +37,7 @@
                 $('#sidebar').show();
                 $('#mapCanvas').width($('#mapCanvas').parent().width());
                 $('#mapCanvas').height($(window).height() - 150);
-                $('#sidebar').height($(window).height() - 150);
+                //$('#sidebar').height($(window).height() - 150);
                 return google.maps.event.trigger($.asm.theMap, 'resize');
             }
         };
@@ -61,7 +63,7 @@
 <div class="container-fluid">
   <div class="row">
     <!-- Sidebar -->
-    <div id="sidebar" class="col-md-3 panel-group sidebar ">
+    <div id="sidebar" class="col-md-3 panel-group sidebar custom-height-sidebar ">
       <div class="panel-group" id="accordion">
         <!-- Title -->
         <div class="panel panel-default option-style">
