@@ -31,9 +31,14 @@
       function initialize() {
 
           var markers = [];
-          var map = new google.maps.Map(document.getElementById('map-canvas'), {
-              mapTypeId: google.maps.MapTypeId.ROADMAP
-          });
+          var mapOptions = {
+              mapTypeId: google.maps.MapTypeId.ROADMAP,
+              overviewMapControl: true,
+              overviewMapControlOptions: {
+                  opened: true
+              }
+          }
+          var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
           var defaultBounds = new google.maps.LatLngBounds(
                   new google.maps.LatLng(21.011111, 105.85),
