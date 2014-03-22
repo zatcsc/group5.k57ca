@@ -1,7 +1,8 @@
 <script type='text/javascript'>
     $(document).ready(function() {
         $('#mapCanvas').width($('#mapCanvas').parent().width());
-        $('#mapCanvas').height($(window).height() - 150);
+        $('#mapCanvas').height($(window).height() - 120);
+        $('#sidebar').height($('#mapCanvas').height() - 20);
         $(".panel-heading")
                 .mouseover(function() {
                     $(this).addClass('mouseover');
@@ -27,12 +28,12 @@
                 $('#sidebar').hide();
                 $('#map').removeClass('col-md-9')
                 $('#mapCanvas').width($('#mapCanvas').parent().width());
-                $('#mapCanvas').height($(window).height() - 150);
+                $('#mapCanvas').height($(window).height() - 120);
             } else if (panels === 2) {
                 $('#map').addClass('col-md-9')
                 $('#sidebar').show();
                 $('#mapCanvas').width($('#mapCanvas').parent().width());
-                $('#mapCanvas').height($(window).height() - 150);
+                $('#sidebar').height($('#mapCanvas').height() - 20);
                 return google.maps.event.trigger($.asm.theMap, 'resize');
             }
         };
@@ -58,7 +59,7 @@
 <div class="container-fluid">
   <div class="row">
     <!-- Sidebar -->
-    <div id="sidebar" class="col-md-3 panel-group sidebar custom-height-sidebar ">
+    <div id="sidebar" class="col-md-3 panel-group sidebar">
       <div class="panel-group" id="accordion">
         <!-- Title -->
         <div class="panel panel-default option-style">
@@ -149,7 +150,6 @@
       </div>
     </div>
     <div id="map" class="col-md-9 nopad">
-
       <iframe id="mapCanvas" src="../welcome/map"></iframe>
       <div id="over-map">
         <a id="toggleSidebar" class="toggles"><i class="glyphicon glyphicon-chevron-left"></i></a>
