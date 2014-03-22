@@ -186,3 +186,16 @@
     font-size: 13px;
     font-weight: 300;
 }
+
+#map {
+    position: relative;
+}
+
+#over-map {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 99;
+    background-color: #ffffff;
+    border: 1px solid #779DD7;
+}
