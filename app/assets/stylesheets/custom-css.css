@@ -71,11 +71,12 @@
     left: 0;
     z-index: 1000;
     display: block;
-    padding: 20px;
+    padding-top: 20px;
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
     background-color: #f5f5f5;
     border-right: 1px solid #eee;
+    margin-bottom: 0 !important;
   }
 }
 
@@ -84,17 +85,29 @@
   margin-right: -21px; /* 20px padding + 1px border */
   margin-left: -20px;
 }
-.nav-sidebar > li > a {
-  padding-right: 40px !important;
-  padding-left: 40px !important;
-}
-.nav-sidebar > .active > a {
-  color: #fff;
-  background-color: #428bca;
-}
 
 .custom-height-sidebar {
-    height: 535px;
+    height: 522px;
+}
+
+.mouseover {
+    color: #ffffff;
+    background-color: #156BEC;
+}
+
+.clicked {
+    color: #ffffff;
+    background-color: #156BEC;
+}
+
+.option-style {
+    background-color: #f5f5f5 !important;
+    border-color: #ddd !important;
+}
+
+.panel-default > a {
+    color: #333 !important;
+    text-decoration: none !important;
 }
 
 /*
@@ -140,4 +153,50 @@
     min-height:32px !important;
     border-radius: 0px !important;
     color: #ffffff !important;
+}
+
+#pac-input {
+    background-color: #fff;
+    padding: 0 11px 0 13px;
+    width: 400px;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    text-overflow: ellipsis;
+}
+
+#pac-input:focus {
+    border-color: #4d90fe;
+    margin-left: -1px;
+    padding-left: 14px;  /* Regular padding-left + 1. */
+    width: 401px;
+}
+
+.pac-container {
+    font-family: sans-serif;
+}
+
+#type-selector {
+    color: #fff;
+    background-color: #4d90fe;
+    padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+#map {
+    position: relative;
+}
+
+#over-map {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 99;
+    background-color: #ffffff;
+    border: 1px solid #779DD7;
 }
