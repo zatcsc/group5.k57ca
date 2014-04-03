@@ -2,12 +2,10 @@ class WelcomeController < ApplicationController
   def index
     
   end
-
   def about
  
   end
   
-  def map
-    render :layout => nil
+  def map    
   end
 end
