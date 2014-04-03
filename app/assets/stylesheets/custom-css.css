@@ -1,5 +1,8 @@
 .indent-body {
-    margin: 5%;
+    position: relative;
+    width: 75%;
+    left: 25%;
+    text-align: left;
 }
 
 #gc-googlebar{
@@ -29,7 +32,7 @@
 #gc-logo img{
     width:200px;
     vertical-align:top;
-    top:-12px;
+    top:-30px;
     left:-4px;
     position:relative;
 }
