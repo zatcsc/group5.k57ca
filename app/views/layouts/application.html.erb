@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Hanoi Easy Traffic" %></title>
+    <title><%= content_for?(:title) ? ("Hanoi Easy Traffic | "+yield(:title)) : "Hanoi Easy Traffic" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Hanoi Easy Traffic" %>">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>    
@@ -47,17 +47,98 @@
       </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid">
-        <div class="col-md-3 sidebar custom-height-sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Current feature</a></li>
-            <li><a href="#">Feature 1</a></li>
-            <li><a href="#">Feature 2</a></li>
-            <li><a href="#">Feature 3</a></li>
-            <li><a href="#">Feature 4</a></li>
-            <li><a href="#">Feature 5</a></li>
-            <li><a href="#">Feature 6</a></li>
-          </ul>
-        </div>    
+  <div class="row">
+    <!-- Sidebar -->
+    <div id="sidebar" class="col-md-3 panel-group sidebar">
+      <div class="panel-group" id="accordion">
+        <!-- Title -->
+        <div class="panel panel-default option-style">
+          <a data-toggle="collapse" data-parent="#accordion" href="#feature1">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                Feature 1
+              </h4>
+            </div>
+          </a>
+          <!-- Body -->
+          <div id="feature1" class="panel-collapse collapse">
+            <div class="panel-body">
+              In developing!
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default option-style">
+          <a data-toggle="collapse" data-parent="#accordion" href="#feature2">
+            <div class="panel-heading">
+            <h4 class="panel-title">
+                Feature 2
+            </h4>
+            </div>
+          </a>
+          <div id="feature2" class="panel-collapse collapse">
+            <div class="panel-body">
+              In developing!
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default option-style">
+          <a data-toggle="collapse" data-parent="#accordion" href="#feature3">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                Feature 3
+              </h4>
+            </div>
+          </a>
+          <div id="feature3" class="panel-collapse collapse">
+            <div class="panel-body">
+              In developing!
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default option-style">
+          <a data-toggle="collapse" data-parent="#accordion" href="#feature4">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                Feature 4
+              </h4>
+            </div>
+          </a>
+          <div id="feature4" class="panel-collapse collapse">
+            <div class="panel-body">
+              In developing!
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default option-style">
+          <a data-toggle="collapse" data-parent="#accordion" href="#feature5">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                Feature 5
+              </h4>
+            </div>
+          </a>
+          <div id="feature5" class="panel-collapse collapse">
+            <div class="panel-body">
+              In developing!
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default option-style">
+          <a data-toggle="collapse" data-parent="#accordion" href="#feature6">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                Feature 6
+              </h4>
+            </div>
+          </a>
+          <div id="feature6" class="panel-collapse collapse">
+            <div class="panel-body">
+              In developing!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
         <%= yield %>          
     </div>	      
     <script type="text/javascript">
