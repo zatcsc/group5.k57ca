@@ -7,12 +7,13 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF8iBU12PVuIu03Xfp55ebFVehhNj_YAY&sensor=false&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF8iBU12PVuIu03Xfp55ebFVehhNj_YAY&sensor=false&libraries=places"></script>
   </head>
   <body>
     <!-- Search Bar -->
     <div id="gc-googlebar">
-      <a id="gc-logo" href="map"> <%= image_tag "logo.png" %> </a>
+      <%= link_to(image_tag("logo.png"),  "/",  id: "gc-logo") %>
+
       <form class="gc-search form-inline" role="search">
         <div class="form-group custom-searchbox" style="border-radius:0px;">
           <label class="sr-only" for="exampleInputEmail2">Email address</label>
