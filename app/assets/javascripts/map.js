@@ -17,6 +17,12 @@ function initialize() {
 	// Create the search box and link it to the UI element.
 	var input = /** @type {HTMLInputElement} */(
 		document.getElementById('pac-input'));
+	var startPlaceInput = document.getElementById('start-place');  
+	var endPlaceInput = document.getElementById('end-place');  	
+	var autocomplete = new google.maps.places.Autocomplete(startPlaceInput);
+	var autocomplete = new google.maps.places.Autocomplete(endPlaceInput);
+  	autocomplete.bindTo('bounds', map);
+
 	//map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
 	var searchBox = new google.maps.places.SearchBox(

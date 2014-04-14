@@ -60,20 +60,47 @@
             <!-- Title -->
             <div class="panel panel-default option-style">
               <a data-toggle="collapse" data-parent="#accordion" href="#feature1">
-              <div class="panel-heading">
-                <h4 class="panel-title"> Feature 1 </h4>
+              <div class="panel-heading findroute findroute-normal">                
+                <h4 class="panel-title">TÌM ĐƯỜNG </h4>                
               </div> </a>
               <!-- Body -->
               <div id="feature1" class="panel-collapse collapse">
                 <div class="panel-body">
-                  In developing!
+                  <div class="title-details left"><p>Chọn phương tiện di chuyển</p></div>
+                  <div class="vehicle-icon left">
+                    <div rel="car" class="vehicle-type vehicle-car">
+                      <%= image_tag("car1.png",:size=>"40x40",:alt=>"car-icon") %>
+                    </div>
+                    <div rel="bus" class="vehicle-type vehicle-bus">
+                      <%= image_tag("bus1.png",:size=>"40x40",:alt=>"car-icon") %>
+                    </div>                                                            
+                    <div rel="bike1" class="vehicle-type vehicle-bike">
+                      <%= image_tag("bike1.png",:size=>"40x40",:alt=>"car-icon") %>
+                    </div>                    
+                    <div rel="walk" class="vehicle-type vehicle-walk">
+                      <%= image_tag("walk1.png",:size=>"40x40",:alt=>"car-icon") %>
+                    </div>                      
+                  </div>
+                  <div class="route-input">
+                    <div class="input-box" text-align="center">
+                      <input class="input-text form-control" id="start-place" type="text" placeholder="Enter start place">                      
+                    </div>
+                    <div class="input-box" text-align="center">
+                      <input class="input-text form-control" id="end-place" type="text" placeholder="Enter second place">
+                    </div>
+                    <div class="submit-box">
+                      <button type="submit" class="submit-btn btn btn-primary" style="width: 60px;">
+                        <span class="glyphicon"> Find </span>
+                      </button>
+                    </div>                                      
+                  </div>                  
                 </div>
               </div>
             </div>
             <div class="panel panel-default option-style">
               <a data-toggle="collapse" data-parent="#accordion" href="#feature2">
-              <div class="panel-heading">
-                <h4 class="panel-title"> Feature 2 </h4>
+              <div class="panel-heading traffic-jam traffic-jam-normal">
+                <h4 class="panel-title"> DANH SÁCH ÙN TĂC </h4>
               </div> </a>
               <div id="feature2" class="panel-collapse collapse">
                 <div class="panel-body">
@@ -83,8 +110,8 @@
             </div>
             <div class="panel panel-default option-style">
               <a data-toggle="collapse" data-parent="#accordion" href="#feature3">
-              <div class="panel-heading">
-                <h4 class="panel-title"> Feature 3 </h4>
+              <div class="panel-heading weather">
+                <h4 class="panel-title"> THỜI TIẾT </h4>
               </div> </a>
               <div id="feature3" class="panel-collapse collapse">
                 <div class="panel-body">

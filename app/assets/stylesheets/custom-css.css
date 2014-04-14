@@ -91,8 +91,8 @@
 }
 
 .mouseover {
-	color: #ffffff;
-	background-color: #156BEC;
+	color: #ffff00;
+	background-color: #156BEC;	
 }
 
 .clicked {
@@ -199,4 +199,71 @@
 	z-index: 99;
 	background-color: #ffffff;
 	border: 1px solid #779DD7;
+}
+.panel-title {
+	text-align: left;
+	font-weight: bold;
+	margin-left: 20%;
+}
+.panel-heading:hover{
+	color: #ffff00;
+	background-color: #156BEC;		
+}
+.findroute-normal{	
+	background-image: url("find1.png");	
+	background-repeat: no-repeat;
+	background-size: 15%;
+	background-position: 10% 50%;
+}	
+.findroute-mouseover{	
+	background-image: url("find2.png");	
+	background-repeat: no-repeat;
+	background-size: 15%;
+	background-position: 10% 50%;	
+}
+.traffic-jam-normal{	
+	background-image: url("jam1.png");	
+	background-repeat: no-repeat;
+	background-size: 15%;
+	background-position: 10% 50%;
+}	
+.traffic-jam-mouseover{	
+	background-image: url("jam2.png");	
+	background-repeat: no-repeat;
+	background-size: 15%;
+	background-position: 10% 50%;	
+}
+.weather{	
+	background-image: url("weather1.png");	
+	background-repeat: no-repeat;
+	background-size: 15%;
+	background-position: 10% 50%;	
+}
+.weather:hover{	
+	background-image: url("weather2.png");	
+	background-repeat: no-repeat;
+	background-size: 15%;
+	background-position: 10% 50%;	
+}
+.title-details{
+	text-align: center;
+	position: relative;
+}
+.vehicle-type{
+	float: left;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.input-box{
+	margin-top: 10px;	
+	margin-left: 10%;
+	margin-right: 10%;
+	width: 80%;
+}
+.input-text{		
+	width: 80%;
+}
+.submit-box{
+	margin-top: 10px;
+	margin-left: 40%;
 }
