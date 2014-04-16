@@ -1,5 +1,4 @@
 function initialize() {
-
 	var markers = [];
 	var map = new google.maps.Map(document.getElementById('map-canvas'), {
 		mapTypeId : google.maps.MapTypeId.ROADMAP

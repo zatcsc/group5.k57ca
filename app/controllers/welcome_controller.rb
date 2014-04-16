@@ -8,4 +8,9 @@ class WelcomeController < ApplicationController
   
   def map    
   end
+
+  def routedirection
+  	
+  end
+
 end

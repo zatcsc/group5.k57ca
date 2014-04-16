@@ -60,8 +60,4 @@ $(window).load(function() {
 			return sidebar(1);
 		}
 	});
-
-	$(function() {
-		$.asm.theMap = new google.maps.Map(document.getElementById('map-canvas'));
-	});
 });

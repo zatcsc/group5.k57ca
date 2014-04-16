@@ -203,7 +203,12 @@
 .panel-title {
 	text-align: left;
 	font-weight: bold;
-	margin-left: 20%;
+	margin-left: 25%;
+}
+.vehicle-icon{
+	width: 100%;
+	height: 20%;	
+	margin-left: 10%;
 }
 .panel-heading:hover{
 	color: #ffff00;
@@ -212,47 +217,49 @@
 .findroute-normal{	
 	background-image: url("find1.png");	
 	background-repeat: no-repeat;
-	background-size: 15%;
+	background-size: 12%;
 	background-position: 10% 50%;
 }	
 .findroute-mouseover{	
 	background-image: url("find2.png");	
 	background-repeat: no-repeat;
-	background-size: 15%;
+	background-size: 12%;
 	background-position: 10% 50%;	
 }
 .traffic-jam-normal{	
 	background-image: url("jam1.png");	
 	background-repeat: no-repeat;
-	background-size: 15%;
+	background-size: 12%;
 	background-position: 10% 50%;
 }	
 .traffic-jam-mouseover{	
 	background-image: url("jam2.png");	
 	background-repeat: no-repeat;
-	background-size: 15%;
+	background-size: 12%;
 	background-position: 10% 50%;	
 }
 .weather{	
 	background-image: url("weather1.png");	
 	background-repeat: no-repeat;
-	background-size: 15%;
+	background-size: 12%;
 	background-position: 10% 50%;	
 }
 .weather:hover{	
 	background-image: url("weather2.png");	
 	background-repeat: no-repeat;
-	background-size: 15%;
+	background-size: 12%;
 	background-position: 10% 50%;	
 }
 .title-details{
 	text-align: center;
 	position: relative;
+	font-weight: bold;
+	font-size: 9;
 }
 .vehicle-type{
 	float: left;
-	margin-left: 5%;
-	margin-right: 5%;
+	margin-left: 3%;
+	margin-right: 3%;
 }
 .input-box{
 	margin-top: 10px;	
