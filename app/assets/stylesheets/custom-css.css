@@ -274,3 +274,31 @@
 	margin-top: 10px;
 	margin-left: 40%;
 }
+.vehicle-car{
+	background-image: url("car1.png");
+	background-size: 35px 35px;
+	background-position: center;
+	width: 35px;
+	height: 35px;
+}
+.vehicle-bus{
+	background-image: url("bus1.png");
+	background-size: 35px 35px;
+	background-position: center;
+	width: 35px;
+	height: 35px;
+}
+.vehicle-bike{
+	background-image: url("bike1.png");
+	background-size: 35px 35px;
+	background-position: center;
+	width: 35px;
+	height: 35px;
+}
+.vehicle-walk{
+	background-image: url("walk1.png");
+	background-size: 35px 35px;
+	background-position: center;
+	width: 35px;
+	height: 35px;
+}

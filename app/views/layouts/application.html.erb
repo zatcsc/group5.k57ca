@@ -59,7 +59,7 @@
           <div class="panel-group" id="accordion">
             <!-- Title -->
             <div class="panel panel-default option-style">
-              <a data-toggle="collapse" data-parent="#accordion" href="#feature1">
+              <a class="link-to-page" data-toggle="collapse" data-parent="#accordion" href="#feature1">
               <div class="panel-heading findroute findroute-normal">                
                 <h4 class="panel-title">Tìm đường </h4>                
               </div> </a>
@@ -68,18 +68,10 @@
                 <div class="panel-body">
                   <div class="title-details"><p>Chọn phương tiện</p></div>
                   <div class="vehicle-icon">
-                    <div rel="car" class="vehicle-type vehicle-car">
-                      <%= image_tag("car1.png",:size=>"35x35",:alt=>"car-icon") %>                      
-                    </div>
-                    <div rel="bus" class="vehicle-type vehicle-bus">
-                      <%= image_tag("bus1.png",:size=>"35x35",:alt=>"car-icon") %>
-                    </div>                                                            
-                    <div rel="bike1" class="vehicle-type vehicle-bike">
-                      <%= image_tag("bike1.png",:size=>"35x35",:alt=>"car-icon") %>
-                    </div>                    
-                    <div rel="walk" class="vehicle-type vehicle-walk">
-                      <%= image_tag("walk1.png",:size=>"35x35",:alt=>"car-icon") %>
-                    </div>                      
+                    <div rel="car" class="vehicle-type vehicle-car"></div>
+                    <div rel="bus" class="vehicle-type vehicle-bus"></div>
+                    <div rel="bike1" class="vehicle-type vehicle-bike"></div>                    
+                    <div rel="walk" class="vehicle-type vehicle-walk"></div>                      
                   </div>
                   <div class="route-input">
                     <div class="input-box" text-align="center">
@@ -89,8 +81,8 @@
                       <input class="input-text form-control" id="end-place" type="text" placeholder="Enter second place">
                     </div>
                     <div class="submit-box">
-                      <button type="submit" class="submit-btn btn btn-primary" style="width: 60px;">
-                        <span class="glyphicon"> Find </span>
+                      <button type="submit" class="submit-btn btn btn-primary show-btn" style="width: 60px;">
+                        <span class="glyphicon"> Show </span>
                       </button>
                     </div>                                      
                   </div>                  
