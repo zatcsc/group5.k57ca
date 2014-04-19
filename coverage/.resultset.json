@@ -1,0 +1,30 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/media/zatcsc/PIGLET/CSC/2ndYead/1stSemester/SE/group5.k57ca/app/controllers/welcome_controller.rb": [
+        1,
+        1,
+        4,
+        null,
+        null,
+        1,
+        9,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/media/zatcsc/PIGLET/CSC/2ndYead/1stSemester/SE/group5.k57ca/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1397939455
+  }
+}
