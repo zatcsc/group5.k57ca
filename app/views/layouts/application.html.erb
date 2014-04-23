@@ -12,7 +12,14 @@
   <body>
     <!-- Search Bar -->
     <div id="gc-googlebar">
-      <%= link_to(image_tag("logo.png"),  "/welcome/map",  id: "gc-logo") %>
+      <a id="gc-logo"><%= image_tag "logo.png" %></a>
+      <script>
+        $(document).ready(function(){
+          $("#gc-logo").click(function(){
+            window.location= "/";  
+          });
+        });
+      </script>
 
       <form class="gc-search form-inline" role="search">
         <div class="form-group custom-searchbox" style="border-radius:0px;">
