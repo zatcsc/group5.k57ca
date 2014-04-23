@@ -2,6 +2,13 @@
   position: relative;
   height: 600px;
 }
+#map-canvas2 {
+  position: relative;
+  height: 300px;
+  width: 500px;
+  margin-left: 50px;
+  margin-top: 50px;
+}
 .controls {
   margin-top: 16px;
   border: 1px solid transparent;
