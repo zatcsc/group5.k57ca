@@ -1,15 +1,68 @@
+#contact {
+    width: 100%;
+    background-image: url('/assets/background.png');
+    float: left;
+}
+
+.contact-zone{
+        margin: 10px;  
+        border: 1px solid #CCC;
+        background-color: rgba(254,221,112,0.5);
+        
+}
+
+.contact-zone h1,h2,h3,h4,h5,h6 {
+    color: white;
+}
+
+#z2-test{
+    margin: 10px;
+}
+
+#z1-text{
+    line-height: 50px;
+    font-family: 'Roboto Slab', 'serif';
+    margin-top: 10px;
+}
+
+#z4 {
+    font-family: 'Montserrat', 'sans-serif';
+    text-align: center;
+    font-weight: 400;
+
+}
+
+#col-1{
+    width: 450px;
+    float: left;
+}
+
+
+#col-2{
+    width: 550px;
+    float: right;
+}
+
+#email-logo {
+    float: left;
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+#map-canvas2 {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
 .contact-form {
     /* Just to center the form on the page */
-    margin: 0 auto;
     width: 400px;
     /* To see the outline of the form */
     padding: 1em;
     border: 1px solid #CCC;
     border-radius: 1em;
-}
-
-.contact-form div + div {
-    margin-top: 1em;
+    margin: 12.5px;
 }
 
 .contact-label {
@@ -18,6 +71,12 @@
     width: 350px;
     text-align: left;
 }
+
+.noborder{
+    border: none !important;
+    background-color: transparent !important;
+
+    }
 
 input, textarea {
     /* To make sure that all text fields have the same font settings
