@@ -1,6 +1,6 @@
 var chosenVehicleType=0;
 var vehicleType= new Array("car","bus","bike","walk");
-var travelMode = new Array("DRIVING","TRANSIT","BICYCLING","WALKING")	
+var travelMode = new Array("DRIVING","TRANSIT","BICYCLING","WALKING");	
 var autocompleteStartInput;
 var autocompleteEndInput;
 $(document).ready(function(){
@@ -42,16 +42,16 @@ var markerArray = [];
 function initializeRouteDirection() {
   var startInput = document.getElementById("start-place");
   var endInput = document.getElementById("end-place");
-  autocompleteStartInput = new google.maps.places.Autocomplete(startInput)
-  autocompleteEndInput = new google.maps.places.Autocomplete(endInput)
+  autocompleteStartInput = new google.maps.places.Autocomplete(startInput);
+  autocompleteEndInput = new google.maps.places.Autocomplete(endInput);
   // Instantiate a directions service.
   directionsService = new google.maps.DirectionsService();
 
   // Create a renderer for directions and bind it to the map.
   var rendererOptions = {
     map: map
-  }
-  directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions)
+  };
+  directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
 
   // Instantiate an info window to hold step text.
   stepDisplay = new google.maps.InfoWindow();
