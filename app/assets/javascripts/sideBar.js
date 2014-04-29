@@ -5,13 +5,6 @@ $(document).ready(function() {
 		$(this).removeClass('mouseover');
 	});
 
-	// $(".panel-heading").click(function(e) {
-	// 	e.preventDefault();
-	// 	//prevent the link from actually navigating somewhere
-	// 	$(this).toggleClass("clicked");
-	// 	$(".panel-heading").not(this).removeClass("clicked");		
-	// 	//remove the clicked class from all other elements
-	// });
 	$(".findroute").mouseover(function(){
 		$(this).removeClass('findroute-normal');
 		$(this).addClass('findroute-mouseover');

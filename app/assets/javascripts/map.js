@@ -63,12 +63,26 @@ function initialize() {
 
 }
 
-function putMarker(myLat, myLng) {
-	//Marker test
-	var JamMarker = new google.maps.Marker({
-		position : new google.maps.LatLng(myLat, myLng),
-		map : map,
-		title : "Tắc ở đây :v",
-		icon : "/assets/jam1.png"
-	});
+var jamLat = [];
+var jamLgn = [];
+var jamMarkerList = [];
+
+function showJam() {
+	jamMarkerList = [];
+	for (var i = 0; i < jamLat.length; i++) {
+		var JamMarker = new google.maps.Marker({
+			position : new google.maps.LatLng(jamLat[i], jamLgn[i]),
+			title : "Tắc ở đây :v",
+			icon : "/assets/jam1.png"
+		});
+		jamMarkerList.push(JamMarker);
+		jamMarkerList[i].setMap(map);
+	}
+}
+
+function hideJam() {
+	for (var i = 0; i < jamLat.length; i++) {
+		jamMarkerList[i].setMap(null);
+	}
+	jamMarkerList = [];
 }
