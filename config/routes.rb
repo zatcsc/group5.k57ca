@@ -1,7 +1,7 @@
-Rails.application.routes.draw do
-  get 'welcome/about'
-  get 'welcome/map'
-  get 'welcome/routedirection'
+Rails.application.routes.draw do  
+  match '/about',     to: "welcome#about", via: 'get'
+  match '/contact',   to: 'welcome#contact', via: 'get'
+  match '/home',      to: 'welcome#map', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
