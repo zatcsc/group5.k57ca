@@ -36,9 +36,8 @@ $(window).load(function() {
 			$('#map').addClass('col-md-9');
 			$('#sidebar').show();
 			$('#map-canvas').width($('#map-canvas').parent().width());
-			
-			return google.maps.event.trigger($.asm.theMap, 'resize');
 		}
+		return google.maps.event.trigger(map, 'resize');
 	};
 
 	$('#toggleSidebar').click(function() {
