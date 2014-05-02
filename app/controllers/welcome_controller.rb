@@ -1,4 +1,7 @@
 class WelcomeController < ApplicationController
+  def home
+    render 'home'
+  end
   def about
   	render "about"
   end
@@ -8,10 +11,5 @@ class WelcomeController < ApplicationController
 
   def map    
   	render "map"
-  end
-  
-  def routedirection
-  	render "routedirection"
-  end
-
+  end  
 end
