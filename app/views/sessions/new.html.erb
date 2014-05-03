@@ -14,5 +14,6 @@
 		<%= f.password_field :password, :class => 'form-control sign-in-out-form' %>
 		
 		<%= f.submit "Sign in", class: "btn btn-large btn-primary btn-sign-in-out" %>
-	<% end %>
+		<p>New user?<%= link_to("Sign up now!",signup_path) %></p>	
+	<% end %>	
 </div>

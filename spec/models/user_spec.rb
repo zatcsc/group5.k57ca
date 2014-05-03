@@ -39,6 +39,7 @@ describe User do
   		end  		
   	end
   end
+
   describe "when email format is valid" do
     it "should be valid" do
       addresses = %w[user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
@@ -48,6 +49,7 @@ describe User do
       end
     end
   end  
+
   describe "when email address is already taken" do
   	before do
   	  user_with_same_email = @user.dup
@@ -56,6 +58,7 @@ describe User do
   	end
   	it { should_not be_valid}
   end
+
   describe "when password is not presense" do
   	before do
   	  @user = User.new(name: "Nguyen Thac Thong",email:"nguyenthacthong@gmail.com",password: "",
@@ -63,16 +66,19 @@ describe User do
   	end
   	it {should_not be_valid}  	
   end
+
   describe "when password doesn't match password_confirmation" do
   	before do
   	  @user.password_confirmation = "mismatch"
   	end
   	it {should_not be_valid}
   end
+
   describe "with a password that's too short" do
   	before {@user.password = @user.password_confirmation="a"*5}
   	it {should_not be_valid}
   end
+  
   describe "return value of authenticate method" do
   	before {@user.save}
   	let(:found_user) {User.find_by(email: @user.email)}
@@ -83,5 +89,9 @@ describe User do
   		let(:user_for_invalid_password) { found_user.authenticate("invalid")  }
 		specify {expect(user_for_invalid_password).to be_false}  		
   	end
+  end
+  describe "remember token" do
+    before {@user.save}    
+    its(:remember_token){ should_not be_blank}
   end
 end

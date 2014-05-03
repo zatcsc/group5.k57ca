@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
   def home
-    render 'home'
   end
   def about
   	render "about"
@@ -10,6 +9,10 @@ class WelcomeController < ApplicationController
   end  
 
   def map    
-  	render "map"
+    if signed_in?
+      render 'map'
+    else
+      redirect_to signin_path
+    end
   end  
 end
