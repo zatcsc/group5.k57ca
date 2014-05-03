@@ -239,9 +239,6 @@ $grayMediumLight: #eaeaea;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.
-.
-.
 
 /* miscellaneous */
 
@@ -254,7 +251,7 @@ $grayMediumLight: #eaeaea;
 }
 /* sidebar */
 $grayMediumLight: #eaeaea;
-aside {
+.aside {
   section {
     padding: 10px 0;
     border-top: 1px solid $grayLighter;
