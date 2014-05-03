@@ -16,8 +16,8 @@ describe "User Pages" do
 				fill_in "Name", with: "Nguyen Thac Thong"
 				fill_in "Email", with: "nguyenthacthong@gmail.com"
 				fill_in "Password", with: "123456"
-				fill_in "Confirmation", with: "123456"
-				expect{click_button submit}.to change(User,:count)
+				fill_in "Password confirmation", with: "123456"
+				expect{click_button submit}.to change(User,:count).by(1)
 			end
 		end
 	end
