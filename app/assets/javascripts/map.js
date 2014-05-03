@@ -1,10 +1,10 @@
 var map;
 function initialize() {
-	var mapOptions = {
-		center : new google.maps.LatLng(21.011111, 105.85),
-		mapTypeId : google.maps.MapTypeId.ROADMAP,
-		zoom : 13
-	};
+    var mapOptions = {
+        center: new google.maps.LatLng(21.011111, 105.85),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        zoom: 13
+    };
 	map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
 	var input = /** @type {HTMLInputElement} */(

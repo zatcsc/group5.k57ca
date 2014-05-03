@@ -52,8 +52,16 @@
 	width: 500px;
 }
 
+.custom-searchbox-admin {
+    width: 400px;
+}
+
 .custom-form {
 	width: 490px !important;
+}
+
+.custom-form-admin {
+    width: 390px !important;
 }
 
 /* Hide for mobile, show later */
@@ -152,7 +160,7 @@
 	color: #ffffff !important;
 }
 
-#pac-input {
+#pac-input #geocoding-input {
 	background-color: #fff;
 	padding: 0 11px 0 13px;
 	width: 400px;
@@ -162,7 +170,7 @@
 	text-overflow: ellipsis;
 }
 
-#pac-input:focus {
+#pac-input:focus #geocoding-input:focus{
 	border-color: #4d90fe;
 	margin-left: -1px;
 	padding-left: 14px; /* Regular padding-left + 1. */
