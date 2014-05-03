@@ -10,49 +10,16 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF8iBU12PVuIu03Xfp55ebFVehhNj_YAY&sensor=false&libraries=places"></script>
   </head>
   <body>
-    <!-- Search Bar -->
-    <div id="gc-googlebar">
-      <%= link_to(image_tag("logo.png"),  "/welcome/map",  id: "gc-logo") %>
-
-      <form class="gc-search form-inline" role="search">
-        <div class="form-group custom-searchbox" style="border-radius:0px;">
-          <label class="sr-only" for="exampleInputEmail2">Email address</label>
-          <input id="pac-input" type="text" class="form-control custom-form" placeholder='Search' autocomplete="on" />
-        </div>
-        <button type="submit" class="btn btn-primary" style="width: 60px;">
-          <span class="glyphicon glyphicon-search"></span>
-        </button>
-      </form>
-    </div>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-inverse custom-navbar" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li>
-              <a href="/welcome/about">About</a>
-            </li>
-            <li>
-              <a href="#">Portfolio</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
+  <%= render 'layouts/header' %>
+  <div class="container custom-container">
     <%= yield %>
-
-  </body>
+  </div>
+  </div>
+    <script type="text/javascript">
+      var hgt = $('.container-fluid').height();
+    </script>
+  </div>
+<!--     <%= debug(params) if Rails.env.development? %>  -->
+  <!-- <%= render 'layouts/footer' %>   -->
+</body>
 </html>

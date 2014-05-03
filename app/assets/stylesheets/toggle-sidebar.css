@@ -1,4 +1,4 @@
-#mapCanvas {
+/*#mapCanvas {
     width: 1020px;
     height: 545px;
     border: 0px;
@@ -40,4 +40,4 @@
     overflow-y: scroll;
     display: inline-block;
     float: none; /* Very important */
-}
+}*/

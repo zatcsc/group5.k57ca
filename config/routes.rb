@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
-  
   get 'welcome/about'
   get 'welcome/map'
   get 'welcome/routedirection'
   get 'welcome/submitData'
   match "welcome/add" => "welcome#add", :via => :post
+
+  resources :users
+  resources :sessions, :only => [:new,:create,:destroy]
+  match '/signup',    to:"users#new",        via: 'get'
+  match '/about',     to: "welcome#about",   via: 'get'
+  match '/contact',   to: 'welcome#contact', via: 'get'
+  match '/home',      to: 'welcome#map',     via: 'get'
+  match '/signin', to: 'sessions#new', via: 'get'
+  match '/signout',to: 'sessions#destroy', via: 'delete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

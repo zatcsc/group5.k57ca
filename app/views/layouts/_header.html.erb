@@ -1,0 +1,56 @@
+<header>
+<!-- Search Bar -->
+    <div id="gc-googlebar">
+      <%= link_to(image_tag("logo.png"), home_path,  id: "gc-logo") %>
+
+      <form class="gc-search form-inline" role="search">
+        <div class="form-group custom-searchbox" style="border-radius:0px;">          
+          <input id="pac-input" type="text" class="form-control custom-form" placeholder='Search' autocomplete="on" />
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 60px;">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
+      </form>
+    </div>
+
+<!-- Navigation Bar -->
+    <nav class="navbar navbar-inverse custom-navbar" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav custom-nav">
+               <li class="float-left">
+                    <%= link_to("About us", about_path) %> 
+               </li>            
+               <li class="float-left">
+                    <%= link_to("Contact us", contact_path) %>
+               </li>               
+                <% if signed_in? %>                    
+                    <li id="fat-menu" class="dropdown float-right">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          Account <b class="caret"></b>
+                       </a>
+                      <ul class="dropdown-menu">
+                        <li><%= link_to "Profile", current_user %></li>
+                        <li><%= link_to "Settings", '#' %></li>
+                        <li class="divider"></li>
+                        <li>
+                          <%= link_to "Sign out", signout_path, method: "delete" %>
+                        </li>
+                      </ul>
+                    </li>
+                <% else %>
+                    <li class="float-right"><%= link_to "Sign in", signin_path %></li>
+                <% end %>                                     
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>          
+</header>

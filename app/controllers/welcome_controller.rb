@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
+  def home
+  end
   def about
     render "about"
   end
@@ -7,10 +9,17 @@ class WelcomeController < ApplicationController
     @jam_places = Jam.all
     render "map"
   end
+  def contact
+  	render "contact"
+  end  
 
-  def routedirection
-    render "routedirection"
-  end
+  def map    
+    if signed_in?
+      render 'map'
+    else
+      redirect_to signin_path
+    end
+  end  
 
   def submitData
     @jam_places = Jam.all
