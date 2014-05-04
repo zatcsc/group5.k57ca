@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'welcome/about'
-  get 'welcome/map'
-  get 'welcome/routedirection'
-  get 'welcome/submitData'
-  match "welcome/add" => "welcome#add", :via => :post
 
   resources :users
   resources :sessions, :only => [:new,:create,:destroy]
@@ -15,6 +10,12 @@ Rails.application.routes.draw do
   match '/signout',to: 'sessions#destroy', via: 'delete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+
+  get 'welcome/about'
+  get 'welcome/map'
+  get 'welcome/routedirection'
+  get 'welcome/submitData'
+  match "welcome/add" => "welcome#add", :via => :post
 
   # You can have the root of your site routed with "root"
   root 'welcome#map'
