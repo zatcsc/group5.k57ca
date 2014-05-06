@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Coordinates do
   pending "add some examples to (or delete) #{__FILE__}"
-  before { @example = Cooordinates.new(logitude: -20, latitude: 80)}
+  before { @example = Coordinates.new(logitude: -20, latitude: 80)}
   subject {@example}
   it {should respond_to(:logitude)}
   it {should respond_to(:latitude)}
