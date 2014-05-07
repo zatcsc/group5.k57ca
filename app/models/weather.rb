@@ -1,5 +1,5 @@
 class Weather < ActiveRecord::Base	
-	belongs_to :province
+	belongs_to :provinces
 	DayREG = /Mon|Tue|Wed|Thu|Fri|Sat|Sun/;
 	validates :day, presence: true,length:{is: 3} , format: {with: DayREG }
 	validates :status, presence: true

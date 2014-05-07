@@ -8,7 +8,7 @@ describe Weather do
     @example = Weather.create(day: "Monday",current_date: @current_date ,status: "Kho rao, hoi am",min_temperature: 18,max_temperature: 25)}
   subject {@example}
   it {should respond_to(:day)}  
-  it {should respond_to(:date)}
+  it {should respond_to(:current_date)}
   it {should respond_to(:min_temperature)}
   it {should respond_to(:max_temperature)}
   describe "when day is not valid" do       
