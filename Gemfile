@@ -50,3 +50,6 @@ end
 
 gem 'simplecov', :require => false, :group => :test
 gem 'bcrypt-ruby', '3.1.2'
+
+gem 'mail_form'
+gem 'simple_form'

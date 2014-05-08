@@ -1,0 +1,151 @@
+#contact {
+    width: 100%;
+    background-image: url('/assets/background.png');
+    float: left;
+}
+
+.contact-zone{
+        margin: 10px;  
+        border: 1px solid #CCC;
+        background-color: rgba(254,221,112,0.5);
+        
+}
+
+.contact-zone h1,h2,h3,h4,h5,h6 {
+    color: white;
+}
+
+#z2-test{
+    margin: 10px;
+}
+
+#z1-text{
+    line-height: 50px;
+    font-family: 'Roboto Slab', 'serif';
+    margin-top: 10px;
+}
+
+#z4 {
+    font-family: 'Montserrat', 'sans-serif';
+    text-align: center;
+    font-weight: 400;
+
+}
+
+#col-1{
+    width: 450px;
+    float: left;
+}
+
+
+#col-2{
+    width: 550px;
+    float: right;
+}
+
+#email-logo {
+    float: left;
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+#map-canvas2 {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+.contact-form {
+    /* Just to center the form on the page */
+    width: 400px;
+    /* To see the outline of the form */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    margin: 12.5px;
+}
+
+.contact-label {
+    /* To make sure that all label have the same size and are properly align */
+    display: inline-block;
+    width: 350px;
+    text-align: left;
+}
+
+.noborder{
+    border: none !important;
+    background-color: transparent !important;
+
+    }
+
+input, textarea {
+    /* To make sure that all text fields have the same font settings
+       By default, textareas have a monospace font */
+    font: 1em sans-serif;
+
+    /* To give the same size to all text field */
+    width: 350px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    /* To harmonize the look & feel of text field border */
+    border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+    /* To give a little highlight on active elements */
+    border-color: #000;
+}
+
+textarea {
+    /* To properly align multiline text fields with their labels */
+    vertical-align: top;
+
+    /* To give enough room to type some text */
+    height: 5em;
+
+    /* To allow users to resize any textarea vertically
+       It does not work on every browsers */
+    resize: vertical;
+}
+
+.button {
+    /* To position the buttons to the same position of the text fields */
+    padding-left: 90px; /* same size as the label elements */
+}
+
+.contact-button {
+    /* This extra margin represent roughly the same space as the space
+       between the labels and their text fields */
+    margin-left: .5em;
+}
+
+/*flash*/
+
+.alert-error {
+background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48;
+text-align: left;
+}
+
+.alert-alert {
+background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48;
+text-align: left;
+}
+
+.alert-success {
+background-color: #dff0d8;
+border-color: #d6e9c6;
+color: #468847;
+text-align: left;
+}
+
+.alert-notice {
+background-color: #dff0d8;
+border-color: #d6e9c6;
+color: #468847;
+text-align: left;
+}
