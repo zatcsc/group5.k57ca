@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 		user = User.find_by(email: params[:session][:email])
 		if user && user.authenticate(params[:session][:password])
 			signin(user)
-			redirect_to home_path
+			redirect_to home_path			
 		else
 			flash[:error]="Invaild email/password"
 			render 'new'

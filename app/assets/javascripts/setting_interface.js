@@ -7,7 +7,7 @@ var ready = function(){
 		currentFeatureEl.css("background-image",currentIconUrl);
 		currentFeatureEl.css("background-repeat","no-repeat");		
 		currentFeatureEl.css("background-position","10% 50%");		
-		currentFeatureEl.css("background-size","50px 40px");									
+		currentFeatureEl.css("background-size","45px 40px");									
 	}	
 	for (var i=0; i<VEHICLE_TYPES.length; i++){
 		var currentClass = ".vehicle-type."+VEHICLE_TYPES[i];		

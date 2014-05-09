@@ -8,6 +8,8 @@ describe Province do
     @example_weather = Weather.new(day: "Mon",current_date: @example_date,
     status: "Cold, windy",min_temperature: 6,max_temperature: 200)
     @example = Province.new(name: "Nghe An")
+    # @example.coordinates.build(logitude: 14,latitude: 30)        
+    # @example.weather.build()
   end  
   subject{@example}
   it {should respond_to(:name)}

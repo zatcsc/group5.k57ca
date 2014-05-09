@@ -322,3 +322,16 @@ aside {
 .vehicle-type{
 	float: left;
 }
+/* Weather */
+.weather-select-box{
+	width: 100%;
+	height: 40px;
+}
+.current-weather{
+	margin-top: 20px;
+	border: 1px black solid;
+	border-radius: 10px;
+}
+.current-weather-content{
+	margin-left: 10px;
+}
