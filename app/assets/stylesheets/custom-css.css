@@ -12,7 +12,7 @@ h1 {
 	margin-left: 0px !important;
 	margin-right: 0px !important;
 	padding-left: 0px !important;
-	padding-right: 0px !important;
+	padding-right: 0px !important;	
 }
 /*header*/
 #gc-googlebar {
@@ -307,4 +307,15 @@ $grayMediumLight: #eaeaea;
 }
 .custom-nav{
 	float: none !important;
+}
+.bottom-space-standard{
+	margin-bottom: 15px;
+}
+.vehicle-icon{
+	height: 34px;
+	float: left;
+	width: 100%;
+}
+.vehicle-type{
+	float: left;
 }

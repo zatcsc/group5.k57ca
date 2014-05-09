@@ -8,9 +8,7 @@ describe "AuthenticationPages" do
   	it {should have_title("Sign in")}  	
   	describe "with valid information" do
   		let(:user) { FactoryGirl.create(:user) }
-  		before do
-        User.create(name:"Nguyen Thac Thong",email:"nguyenthacthong@gmail.com",
-          password: "123456",password_confirmation:"123456")
+  		before do        
   		  fill_in "Email", :with => user.email.upcase
   		  fill_in "Password", :with => user.password
   		  click_button "Sign in"

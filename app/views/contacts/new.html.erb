@@ -1,0 +1,58 @@
+
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+
+<%  provide(:title,"Contact") %>
+
+<div id="contact">  
+
+    <div id="col-1" class="col">
+      <div id="z1" class="contact-zone">
+        <div style="padding: 10px, 0">
+          <div id="email-logo"><%= image_tag "email_logo.png" %></div>
+          <h2 id="z1-text">LIÊN HỆ</h2>  
+        </div>
+      </div>
+
+      <div id="z2" class="contact-zone" style="padding: 10px;">
+        <h5>Nếu bạn có bất cứ góp ý gì cho Project của nhóm, hãy gửi tin nhắn theo mẫu ở dưới, chúng tôi sẽ trả lời nhanh nhất có thể:</h5>
+      </div>
+
+      <div id="z3" class="contact-zone">
+        <div id="form" class="contact-form">
+          <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+            <%= f.input :name, :required => true %>
+            <%= f.input :email, :required => true %>
+            <%= f.input :message, :as => :text, :required => true %>
+            <div class= "hidden">
+              <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+            </div>
+            <div>
+              </br>
+              <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+      </div>  
+    </div>
+
+    <div id="col-2" class="col">
+      <div id="z4" class="contact-zone">
+        <h1>04-1214.653.275</h1>
+        <h3 style="margin-top: 10px">thongnt_57@vnu.edu.vn</h3>
+      </div>
+      
+      <div id="z5" class="contact-zone noborder">
+        <div id="map2">
+          <div id="map-canvas2" class="nopad" ></div>
+          &nbsp;
+          <div id="warnings_panel" ></div>
+          <script type="text/javascript">  
+            initialize2();
+          </script>
+        </div>  
+        <h4><b>Trụ sở: K57CA - Ngành: Công Nghệ Thông Tin. Đại học Công Nghệ - Đại học Quốc Gia Hà Nội</b></h4>
+        <h5>Địa chỉ: 24 Xuân Thủy, Dịch Vọng Hậu, Cầu Giấy, Hà Nội</h5>      
+      </div>
+    </div>
+  

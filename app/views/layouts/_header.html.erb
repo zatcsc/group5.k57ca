@@ -1,7 +1,7 @@
 <header>
 <!-- Search Bar -->
     <div id="gc-googlebar">
-      <%= link_to(image_tag("logo.png"), home_path,  id: "gc-logo") %>
+      <%= link_to(image_tag("logo.png"),root_url,  id: "gc-logo", class: "reload") %>
 
       <form class="gc-search form-inline" role="search">
         <div class="form-group custom-searchbox" style="border-radius:0px;">          
@@ -27,10 +27,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav custom-nav">
                <li class="float-left">
-                    <%= link_to("About us", about_path) %> 
+                    <%= link_to("About us", about_path, class: "reload") %> 
                </li>            
                <li class="float-left">
-                    <%= link_to("Contact us", contact_path) %>
+                    <%= link_to("Contact us", contact_path, class: "reload") %>
                </li>               
                 <% if signed_in? %>                    
                     <li id="fat-menu" class="dropdown float-right">
@@ -38,16 +38,16 @@
                           Account <b class="caret"></b>
                        </a>
                       <ul class="dropdown-menu">
-                        <li><%= link_to "Profile", current_user %></li>
+                        <li><%= link_to "Profile", current_user,class: "reload" %></li>
                         <li><%= link_to "Settings", '#' %></li>
                         <li class="divider"></li>
                         <li>
-                          <%= link_to "Sign out", signout_path, method: "delete" %>
+                          <%= link_to "Sign out", signout_path, method: "delete", class: "reload" %>
                         </li>
                       </ul>
                     </li>
                 <% else %>
-                    <li class="float-right"><%= link_to "Sign in", signin_path %></li>
+                    <li class="float-right"><%= link_to "Sign in", signin_path, class: "reload" %></li>
                 <% end %>                                     
           </ul>
         </div><!-- /.navbar-collapse -->
