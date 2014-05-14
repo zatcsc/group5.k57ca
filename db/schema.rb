@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140503021657) do
+ActiveRecord::Schema.define(version: 20140514133837) do
+
+  create_table "jams", force: true do |t|
+    t.float    "lat"
+    t.float    "lng"
+    t.string   "reason"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

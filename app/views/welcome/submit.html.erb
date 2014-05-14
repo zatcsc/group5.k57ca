@@ -1,0 +1,20 @@
+<h1>Database controller</h1>
+
+<p>Add new jam address</p>
+<%= form_tag("/add", :method => "post") do %>
+    <%= text_field_tag(:jam_lat) %>
+    <%= text_field_tag(:jam_lgn) %>
+    <%= text_field_tag(:jam_reason) %>
+    <%= submit_tag("Submit", :class => "btn") %>
+<% end %>
+
+<% if !flash[:error].nil? %>
+    <div class="alert alert-error">
+      <button type="button" class="close" data-dismiss="alert">x</button>
+      <strong><%= flash[:error] %></strong>
+    </div>
+<% end %>
+
+<% @jam_places.each do |t| %>
+    <li><%= t.lat %>  <%= t.lng %> <%= t.reason %></li>
+<% end %>
