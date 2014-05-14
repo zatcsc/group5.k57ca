@@ -1,3 +1,19 @@
+$(document).ready(function () {
+
+    $(".panel-heading").mouseover(function () {
+        $(this).addClass('mouseover');
+    }).mouseout(function () {
+        $(this).removeClass('mouseover');
+    });
+
+    $(".panel-heading").click(function (e) {
+        e.preventDefault();
+
+        $(this).toggleClass("clicked");
+        $(".panel-heading").not(this).removeClass("clicked");
+
+    });
+});
 $(window).load(function () {
     $.asm = {};
     $.asm.panels = 2;
