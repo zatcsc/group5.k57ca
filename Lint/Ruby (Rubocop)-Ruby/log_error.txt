@@ -1,0 +1,601 @@
+Inspecting 12 files
+CW..CCCCCCCC
+
+Offenses:
+
+app/helpers/users_helper.rb:2:1: C: Use 2 (not 1) spaces for indentation.
+	def gravatar_for(user)
+^
+app/helpers/users_helper.rb:2:1: C: Tab detected.
+	def gravatar_for(user)
+^
+app/helpers/users_helper.rb:3:1: C: Tab detected.
+		gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
+^
+app/helpers/users_helper.rb:3:2: C: Use 2 (not 1) spaces for indentation.
+		gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
+ ^
+app/helpers/users_helper.rb:3:28: C: Do not use :: for method calls.
+		gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
+                           ^^
+app/helpers/users_helper.rb:4:1: C: Tab detected.
+		gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
+^
+app/helpers/users_helper.rb:5:1: C: Tab detected.
+		image_tag(gravatar_url,alt: user.name, class: "gravatar")
+^
+app/helpers/users_helper.rb:5:25: C: Space missing after comma.
+		image_tag(gravatar_url,alt: user.name, class: "gravatar")
+                        ^
+app/helpers/users_helper.rb:5:49: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+		image_tag(gravatar_url,alt: user.name, class: "gravatar")
+                                                ^^^^^^^^^^
+app/helpers/users_helper.rb:6:1: C: Tab detected.
+	end
+^
+app/helpers/sessions_helper.rb:2:1: C: Use 2 (not 1) spaces for indentation.
+	def signin(user)
+^
+app/helpers/sessions_helper.rb:2:1: C: Tab detected.
+	def signin(user)
+^
+app/helpers/sessions_helper.rb:3:1: C: Tab detected.
+		remember_token = User.new_remember_token
+^
+app/helpers/sessions_helper.rb:3:2: C: Use 2 (not 1) spaces for indentation.
+		remember_token = User.new_remember_token
+ ^
+app/helpers/sessions_helper.rb:4:1: C: Tab detected.
+		cookies.permanent[:remember_token] = remember_token
+^
+app/helpers/sessions_helper.rb:5:1: C: Tab detected.
+		user.update_attribute(:remember_token,User.digest(remember_token))
+^
+app/helpers/sessions_helper.rb:5:40: C: Space missing after comma.
+		user.update_attribute(:remember_token,User.digest(remember_token))
+                                       ^
+app/helpers/sessions_helper.rb:6:1: C: Tab detected.
+		self.current_user = user;
+^
+app/helpers/sessions_helper.rb:6:27: C: Do not use semicolons to terminate expressions.
+		self.current_user = user;
+                          ^
+app/helpers/sessions_helper.rb:7:1: C: Tab detected.
+	end
+^
+app/helpers/sessions_helper.rb:8:1: C: Tab detected.
+	def current_user=(user)
+^
+app/helpers/sessions_helper.rb:8:2: C: Use empty lines between defs.
+	def current_user=(user)
+ ^^^
+app/helpers/sessions_helper.rb:8:2: C: Use attr_writer to define trivial writer methods.
+	def current_user=(user)
+ ^^^
+app/helpers/sessions_helper.rb:9:1: C: Tab detected.
+		@current_user = user;
+^
+app/helpers/sessions_helper.rb:9:2: C: Use 2 (not 1) spaces for indentation.
+		@current_user = user;
+ ^
+app/helpers/sessions_helper.rb:9:23: C: Do not use semicolons to terminate expressions.
+		@current_user = user;
+                      ^
+app/helpers/sessions_helper.rb:10:1: C: Tab detected.
+	end
+^
+app/helpers/sessions_helper.rb:11:1: C: Tab detected.
+	def current_user
+^
+app/helpers/sessions_helper.rb:11:2: C: Use empty lines between defs.
+	def current_user
+ ^^^
+app/helpers/sessions_helper.rb:12:1: C: Tab detected.
+		remember_token = User.digest(cookies[:remember_token])
+^
+app/helpers/sessions_helper.rb:12:2: C: Use 2 (not 1) spaces for indentation.
+		remember_token = User.digest(cookies[:remember_token])
+ ^
+app/helpers/sessions_helper.rb:13:5: C: Tab detected.
+    	@current_user ||= User.find_by(remember_token: remember_token)
+    ^
+app/helpers/sessions_helper.rb:13:6: C: Inconsistent indentation detected.
+    	@current_user ||= User.find_by(remember_token: remember_token)
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/sessions_helper.rb:14:1: C: Tab detected.
+	end
+^
+app/helpers/sessions_helper.rb:15:1: C: Tab detected.
+	def signed_in?
+^
+app/helpers/sessions_helper.rb:15:2: C: Use empty lines between defs.
+	def signed_in?
+ ^^^
+app/helpers/sessions_helper.rb:16:2: C: Use 2 (not 3) spaces for indentation.
+    !current_user.nil?
+ ^^^
+app/helpers/sessions_helper.rb:17:3: C: Tab detected.
+  	end	
+  ^
+app/helpers/sessions_helper.rb:17:4: W: end at 17, 3 is not aligned with def at 15, 1
+  	end	
+   ^^^
+app/helpers/sessions_helper.rb:17:7: C: Trailing whitespace detected.
+  	end	
+      ^
+app/helpers/sessions_helper.rb:18:1: C: Tab detected.
+	def sign_out
+^
+app/helpers/sessions_helper.rb:18:2: C: Use empty lines between defs.
+	def sign_out
+ ^^^
+app/helpers/sessions_helper.rb:19:2: C: Use 2 (not 4) spaces for indentation.
+    	current_user.update_attribute(:remember_token,User.digest(User.new_remember_token))
+ ^^^^
+app/helpers/sessions_helper.rb:19:5: C: Tab detected.
+    	current_user.update_attribute(:remember_token,User.digest(User.new_remember_token))
+    ^
+app/helpers/sessions_helper.rb:19:51: C: Space missing after comma.
+    	current_user.update_attribute(:remember_token,User.digest(User.new_remember_token))
+                                                  ^
+app/helpers/sessions_helper.rb:20:5: C: Tab detected.
+    	cookies.delete(:remember_token)
+    ^
+app/helpers/sessions_helper.rb:21:5: C: Tab detected.
+    	self.current_user = nil
+    ^
+app/helpers/sessions_helper.rb:22:3: C: Tab detected.
+  	end  	
+  ^
+app/helpers/sessions_helper.rb:22:4: W: end at 22, 3 is not aligned with def at 18, 1
+  	end  	
+   ^^^
+app/helpers/sessions_helper.rb:22:7: C: Trailing whitespace detected.
+  	end  	
+      ^^^
+app/controllers/welcome_controller.rb:5:3: C: Use empty lines between defs.
+  def about
+  ^^^
+app/controllers/welcome_controller.rb:6:3: C: Use 2 (not 1) spaces for indentation.
+  	render "about"
+  ^
+app/controllers/welcome_controller.rb:6:3: C: Tab detected.
+  	render "about"
+  ^
+app/controllers/welcome_controller.rb:6:11: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  	render "about"
+          ^^^^^^^
+app/controllers/welcome_controller.rb:8:3: C: Use empty lines between defs.
+  def contact
+  ^^^
+app/controllers/welcome_controller.rb:9:3: C: Use 2 (not 1) spaces for indentation.
+  	render "contact"
+  ^
+app/controllers/welcome_controller.rb:9:3: C: Tab detected.
+  	render "contact"
+  ^
+app/controllers/welcome_controller.rb:9:11: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  	render "contact"
+          ^^^^^^^^^
+app/controllers/welcome_controller.rb:10:6: C: Trailing whitespace detected.
+  end  
+     ^^
+app/controllers/welcome_controller.rb:12:10: C: Trailing whitespace detected.
+  def map    
+         ^^^^
+app/controllers/welcome_controller.rb:18:6: C: Trailing whitespace detected.
+  end  
+     ^^
+app/controllers/welcome_controller.rb:19:3: C: Use empty lines between defs.
+  def weather
+  ^^^
+app/controllers/welcome_controller.rb:20:3: C: Use 2 (not 3) spaces for indentation.
+     @city_id =  params[:city_id]
+  ^^^
+app/controllers/welcome_controller.rb:21:17: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+     @xml_url = "http://api.openweathermap.org/data/2.5/weather?id="+@city_id        
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/welcome_controller.rb:21:69: C: Surrounding space missing for operator '+'.
+     @xml_url = "http://api.openweathermap.org/data/2.5/weather?id="+@city_id        
+                                                                    ^
+app/controllers/welcome_controller.rb:21:78: C: Trailing whitespace detected.
+     @xml_url = "http://api.openweathermap.org/data/2.5/weather?id="+@city_id        
+                                                                             ^^^^^^^^
+app/controllers/welcome_controller.rb:23:54: C: Trailing whitespace detected.
+     @data = ActiveSupport::JSON.decode(@weather_xml)     
+                                                     ^^^^^
+app/controllers/welcome_controller.rb:26:6: C: Use 2 (not 7) spaces for indentation.
+            format.html {render "weather", :layout => false}
+     ^^^^^^^
+app/controllers/welcome_controller.rb:26:26: C: Space missing inside {.
+            format.html {render "weather", :layout => false}
+                         ^
+app/controllers/welcome_controller.rb:26:33: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+            format.html {render "weather", :layout => false}
+                                ^^^^^^^^^
+app/controllers/welcome_controller.rb:26:44: C: Use the new Ruby 1.9 hash syntax.
+            format.html {render "weather", :layout => false}
+                                           ^^^^^^^^^^
+app/controllers/welcome_controller.rb:26:60: C: Space missing inside }.
+            format.html {render "weather", :layout => false}
+                                                           ^
+app/controllers/welcome_controller.rb:27:9: C: Trailing whitespace detected.
+     end               
+        ^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:3:3: C: Use 2 (not 1) spaces for indentation.
+  	@user = User.new
+  ^
+app/controllers/users_controller.rb:3:3: C: Tab detected.
+  	@user = User.new
+  ^
+app/controllers/users_controller.rb:5:3: C: Use empty lines between defs.
+  def create
+  ^^^
+app/controllers/users_controller.rb:6:3: C: Use 2 (not 1) spaces for indentation.
+  	@user = User.new(user_params)
+  ^
+app/controllers/users_controller.rb:6:3: C: Tab detected.
+  	@user = User.new(user_params)
+  ^
+app/controllers/users_controller.rb:7:3: C: Tab detected.
+  	if @user.save
+  ^
+app/controllers/users_controller.rb:8:1: C: Tab detected.
+		redirect_to @user
+^
+app/controllers/users_controller.rb:8:3: C: Use 2 (not -1) spaces for indentation.
+		redirect_to @user
+  ^
+app/controllers/users_controller.rb:9:3: C: Tab detected.
+  	else
+  ^
+app/controllers/users_controller.rb:10:3: C: Tab detected.
+  		render 'new'
+  ^
+app/controllers/users_controller.rb:10:4: C: Use 2 (not 1) spaces for indentation.
+  		render 'new'
+   ^
+app/controllers/users_controller.rb:11:3: C: Tab detected.
+  	end
+  ^
+app/controllers/users_controller.rb:15:3: C: Use 2 (not 1) spaces for indentation.
+  	@user = User.find(params[:id])  	
+  ^
+app/controllers/users_controller.rb:15:3: C: Tab detected.
+  	@user = User.find(params[:id])  	
+  ^
+app/controllers/users_controller.rb:15:34: C: Trailing whitespace detected.
+  	@user = User.find(params[:id])  	
+                                 ^^^
+app/controllers/users_controller.rb:17:1: C: Keep a blank line before and after private.
+private 
+^^^^^^^
+app/controllers/users_controller.rb:17:8: C: Trailing whitespace detected.
+private 
+       ^
+app/controllers/users_controller.rb:18:1: C: Tab detected.
+	def user_params
+^
+app/controllers/users_controller.rb:18:2: C: Inconsistent indentation detected.
+	def user_params
+ ^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:19:1: C: Tab detected.
+		params.require(:user).permit(:name,:email,:password,:password_confirmation)
+^
+app/controllers/users_controller.rb:19:2: C: Use 2 (not 1) spaces for indentation.
+		params.require(:user).permit(:name,:email,:password,:password_confirmation)
+ ^
+app/controllers/users_controller.rb:19:37: C: Space missing after comma.
+		params.require(:user).permit(:name,:email,:password,:password_confirmation)
+                                    ^
+app/controllers/users_controller.rb:19:44: C: Space missing after comma.
+		params.require(:user).permit(:name,:email,:password,:password_confirmation)
+                                           ^
+app/controllers/users_controller.rb:19:54: C: Space missing after comma.
+		params.require(:user).permit(:name,:email,:password,:password_confirmation)
+                                                     ^
+app/controllers/users_controller.rb:20:1: C: Tab detected.
+	end	
+^
+app/controllers/users_controller.rb:20:5: C: Trailing whitespace detected.
+	end	
+    ^
+app/controllers/application_controller.rb:6:4: C: Final newline missing.
+end
+   
+app/controllers/sessions_controller.rb:2:1: C: Use 2 (not 1) spaces for indentation.
+	def new
+^
+app/controllers/sessions_controller.rb:2:1: C: Tab detected.
+	def new
+^
+app/controllers/sessions_controller.rb:3:1: C: Tab detected.
+	end
+^
+app/controllers/sessions_controller.rb:4:1: C: Tab detected.
+	def create
+^
+app/controllers/sessions_controller.rb:4:2: C: Use empty lines between defs.
+	def create
+ ^^^
+app/controllers/sessions_controller.rb:5:1: C: Tab detected.
+		user = User.find_by(email: params[:session][:email])
+^
+app/controllers/sessions_controller.rb:5:2: C: Use 2 (not 1) spaces for indentation.
+		user = User.find_by(email: params[:session][:email])
+ ^
+app/controllers/sessions_controller.rb:6:1: C: Tab detected.
+		if user && user.authenticate(params[:session][:password])
+^
+app/controllers/sessions_controller.rb:7:1: C: Tab detected.
+			signin(user)
+^
+app/controllers/sessions_controller.rb:7:3: C: Use 2 (not 1) spaces for indentation.
+			signin(user)
+  ^
+app/controllers/sessions_controller.rb:8:1: C: Tab detected.
+			redirect_to home_path			
+^
+app/controllers/sessions_controller.rb:8:25: C: Trailing whitespace detected.
+			redirect_to home_path			
+                        ^^^
+app/controllers/sessions_controller.rb:9:1: C: Tab detected.
+		else
+^
+app/controllers/sessions_controller.rb:10:1: C: Tab detected.
+			flash[:error]="Invaild email/password"
+^
+app/controllers/sessions_controller.rb:10:3: C: Use 2 (not 1) spaces for indentation.
+			flash[:error]="Invaild email/password"
+  ^
+app/controllers/sessions_controller.rb:10:17: C: Surrounding space missing for operator '='.
+			flash[:error]="Invaild email/password"
+                ^
+app/controllers/sessions_controller.rb:10:18: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+			flash[:error]="Invaild email/password"
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/sessions_controller.rb:11:1: C: Tab detected.
+			render 'new'
+^
+app/controllers/sessions_controller.rb:12:1: C: Tab detected.
+		end		
+^
+app/controllers/sessions_controller.rb:12:6: C: Trailing whitespace detected.
+		end		
+     ^^
+app/controllers/sessions_controller.rb:13:1: C: Tab detected.
+	end
+^
+app/controllers/sessions_controller.rb:14:1: C: Tab detected.
+	def destroy
+^
+app/controllers/sessions_controller.rb:14:2: C: Use empty lines between defs.
+	def destroy
+ ^^^
+app/controllers/sessions_controller.rb:15:1: C: Tab detected.
+		sign_out
+^
+app/controllers/sessions_controller.rb:15:2: C: Use 2 (not 1) spaces for indentation.
+		sign_out
+ ^
+app/controllers/sessions_controller.rb:16:1: C: Tab detected.
+		redirect_to root_url		
+^
+app/controllers/sessions_controller.rb:16:23: C: Trailing whitespace detected.
+		redirect_to root_url		
+                      ^^
+app/controllers/sessions_controller.rb:17:1: C: Tab detected.
+	end
+^
+app/models/coordinates.rb:2:1: C: Use 2 (not 1) spaces for indentation.
+	belongs_to :provinces
+^
+app/models/coordinates.rb:2:1: C: Tab detected.
+	belongs_to :provinces
+^
+app/models/coordinates.rb:3:1: C: Tab detected.
+	validates  :logitude , numericality: {greater_than_or_equal_to: -180,less_than_or_equal_to: 180}
+^
+app/models/coordinates.rb:3:11: C: Put one space between the method name and the first argument.
+	validates  :logitude , numericality: {greater_than_or_equal_to: -180,less_than_or_equal_to: 180}
+          ^^
+app/models/coordinates.rb:3:39: C: Space inside { missing.
+	validates  :logitude , numericality: {greater_than_or_equal_to: -180,less_than_or_equal_to: 180}
+                                      ^
+app/models/coordinates.rb:3:70: C: Space missing after comma.
+	validates  :logitude , numericality: {greater_than_or_equal_to: -180,less_than_or_equal_to: 180}
+                                                                     ^
+app/models/coordinates.rb:3:97: C: Space inside } missing.
+	validates  :logitude , numericality: {greater_than_or_equal_to: -180,less_than_or_equal_to: 180}
+                                                                                                ^
+app/models/coordinates.rb:4:1: C: Tab detected.
+	validates  :latitude, numericality: {greater_than_or_equal_to: -90, less_than_or_equal_to: 90}
+^
+app/models/coordinates.rb:4:11: C: Put one space between the method name and the first argument.
+	validates  :latitude, numericality: {greater_than_or_equal_to: -90, less_than_or_equal_to: 90}
+          ^^
+app/models/coordinates.rb:4:38: C: Space inside { missing.
+	validates  :latitude, numericality: {greater_than_or_equal_to: -90, less_than_or_equal_to: 90}
+                                     ^
+app/models/coordinates.rb:4:95: C: Space inside } missing.
+	validates  :latitude, numericality: {greater_than_or_equal_to: -90, less_than_or_equal_to: 90}
+                                                                                              ^
+app/models/province.rb:2:1: C: Use 2 (not 1) spaces for indentation.
+	has_one :coordinates
+^
+app/models/province.rb:2:1: C: Tab detected.
+	has_one :coordinates
+^
+app/models/province.rb:3:1: C: Tab detected.
+	has_one :weather
+^
+app/models/province.rb:4:1: C: Tab detected.
+	validates :name , presence: true	
+^
+app/models/province.rb:4:34: C: Trailing whitespace detected.
+	validates :name , presence: true	
+                                 ^
+app/models/user.rb:2:1: C: Use 2 (not 1) spaces for indentation.
+	before_save {self.email = email.downcase}
+^
+app/models/user.rb:2:1: C: Tab detected.
+	before_save {self.email = email.downcase}
+^
+app/models/user.rb:2:15: C: Space missing inside {.
+	before_save {self.email = email.downcase}
+              ^
+app/models/user.rb:2:42: C: Space missing inside }.
+	before_save {self.email = email.downcase}
+                                         ^
+app/models/user.rb:3:1: C: Tab detected.
+	before_create :create_remember_token
+^
+app/models/user.rb:4:1: C: Tab detected.
+	validates :name, presence: true, length: {maximum: 20 , minimum: 6}
+^
+app/models/user.rb:4:43: C: Space inside { missing.
+	validates :name, presence: true, length: {maximum: 20 , minimum: 6}
+                                          ^
+app/models/user.rb:4:68: C: Space inside } missing.
+	validates :name, presence: true, length: {maximum: 20 , minimum: 6}
+                                                                   ^
+app/models/user.rb:5:1: C: Tab detected.
+	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i	
+^
+app/models/user.rb:5:58: C: Trailing whitespace detected.
+	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i	
+                                                         ^
+app/models/user.rb:6:1: C: Tab detected.
+	validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}	
+^
+app/models/user.rb:6:44: C: Space inside { missing.
+	validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}	
+                                           ^
+app/models/user.rb:6:68: C: Space inside } missing.
+	validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}	
+                                                                   ^
+app/models/user.rb:6:83: C: Space inside { missing.
+	validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}	
+                                                                                  ^
+app/models/user.rb:6:105: C: Space inside } missing.
+	validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}	
+                                                                                                        ^
+app/models/user.rb:6:106: C: Trailing whitespace detected.
+	validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}	
+                                                                                                         ^
+app/models/user.rb:7:1: C: Tab detected.
+	has_secure_password
+^
+app/models/user.rb:8:1: C: Tab detected.
+	validates :password, length: {minimum: 6}
+^
+app/models/user.rb:8:31: C: Space inside { missing.
+	validates :password, length: {minimum: 6}
+                              ^
+app/models/user.rb:8:42: C: Space inside } missing.
+	validates :password, length: {minimum: 6}
+                                         ^
+app/models/user.rb:9:1: C: Tab detected.
+	def User.new_remember_token
+^
+app/models/user.rb:9:6: C: Use self.new_remember_token instead of User.new_remember_token.
+	def User.new_remember_token
+     ^^^^
+app/models/user.rb:10:1: C: Tab detected.
+		SecureRandom.urlsafe_base64
+^
+app/models/user.rb:10:2: C: Use 2 (not 1) spaces for indentation.
+		SecureRandom.urlsafe_base64
+ ^
+app/models/user.rb:11:1: C: Tab detected.
+	end
+^
+app/models/user.rb:12:1: C: Tab detected.
+	def User.digest(token)
+^
+app/models/user.rb:12:6: C: Use self.digest instead of User.digest.
+	def User.digest(token)
+     ^^^^
+app/models/user.rb:13:1: C: Tab detected.
+		Digest::SHA1.hexdigest(token.to_s)
+^
+app/models/user.rb:13:2: C: Use 2 (not 1) spaces for indentation.
+		Digest::SHA1.hexdigest(token.to_s)
+ ^
+app/models/user.rb:14:1: C: Tab detected.
+	end
+^
+app/models/user.rb:15:1: C: Keep a blank line before and after private.
+private
+^^^^^^^
+app/models/user.rb:16:1: C: Tab detected.
+	def create_remember_token
+^
+app/models/user.rb:17:1: C: Tab detected.
+		self.remember_token = User.digest(User.new_remember_token)
+^
+app/models/user.rb:17:2: C: Use 2 (not 1) spaces for indentation.
+		self.remember_token = User.digest(User.new_remember_token)
+ ^
+app/models/user.rb:18:1: C: Tab detected.
+	end
+^
+app/models/weather.rb:1:35: C: Trailing whitespace detected.
+class Weather < ActiveRecord::Base	
+                                  ^
+app/models/weather.rb:2:1: C: Use 2 (not 1) spaces for indentation.
+	belongs_to :provinces
+^
+app/models/weather.rb:2:1: C: Tab detected.
+	belongs_to :provinces
+^
+app/models/weather.rb:3:1: C: Tab detected.
+	DayREG = /Mon|Tue|Wed|Thu|Fri|Sat|Sun/;
+^
+app/models/weather.rb:3:2: C: Use SCREAMING_SNAKE_CASE for constants.
+	DayREG = /Mon|Tue|Wed|Thu|Fri|Sat|Sun/;
+ ^^^^^^
+app/models/weather.rb:3:40: C: Do not use semicolons to terminate expressions.
+	DayREG = /Mon|Tue|Wed|Thu|Fri|Sat|Sun/;
+                                       ^
+app/models/weather.rb:4:1: C: Tab detected.
+	validates :day, presence: true,length:{is: 3} , format: {with: DayREG }
+^
+app/models/weather.rb:4:32: C: Space missing after comma.
+	validates :day, presence: true,length:{is: 3} , format: {with: DayREG }
+                               ^
+app/models/weather.rb:4:39: C: Space missing after colon.
+	validates :day, presence: true,length:{is: 3} , format: {with: DayREG }
+                                      ^
+app/models/weather.rb:4:40: C: Space inside { missing.
+	validates :day, presence: true,length:{is: 3} , format: {with: DayREG }
+                                       ^
+app/models/weather.rb:4:46: C: Space inside } missing.
+	validates :day, presence: true,length:{is: 3} , format: {with: DayREG }
+                                             ^
+app/models/weather.rb:4:58: C: Space inside { missing.
+	validates :day, presence: true,length:{is: 3} , format: {with: DayREG }
+                                                         ^
+app/models/weather.rb:5:1: C: Tab detected.
+	validates :status, presence: true
+^
+app/models/weather.rb:6:1: C: Tab detected.
+	validates :max_temperature, numericality: {less_than_or_equal_to: 50}
+^
+app/models/weather.rb:6:44: C: Space inside { missing.
+	validates :max_temperature, numericality: {less_than_or_equal_to: 50}
+                                           ^
+app/models/weather.rb:6:70: C: Space inside } missing.
+	validates :max_temperature, numericality: {less_than_or_equal_to: 50}
+                                                                     ^
+app/models/weather.rb:7:1: C: Tab detected.
+	validates :min_temperature, numericality: {greater_than_or_equal_to: -50}
+^
+app/models/weather.rb:7:44: C: Space inside { missing.
+	validates :min_temperature, numericality: {greater_than_or_equal_to: -50}
+                                           ^
+app/models/weather.rb:7:74: C: Space inside } missing.
+	validates :min_temperature, numericality: {greater_than_or_equal_to: -50}
+                                                                         ^
+
+12 files inspected, 198 offenses detected

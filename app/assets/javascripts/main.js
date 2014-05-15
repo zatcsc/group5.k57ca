@@ -16,7 +16,7 @@ $(window).load(function() {
 			
 			return google.maps.event.trigger($.asm.theMap, 'resize');
 		}
-	};
+	}
 
 	$('#toggleSidebar').click(function() {
 		if ($.asm.panels === 1) {

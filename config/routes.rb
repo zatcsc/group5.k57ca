@@ -4,12 +4,16 @@ Rails.application.routes.draw do
   match '/signup',    to:"users#new",        via: 'get'
   match '/about',     to: "welcome#about",   via: 'get'
   match '/contact',   to: 'welcome#contact', via: 'get'
+  match '/weather', to: 'welcome#weather', via: 'post'
   match '/home',      to: 'welcome#map',     via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout',to: 'sessions#destroy', via: 'delete'
 
+<<<<<<< HEAD
   match '/contacts',  to: 'contacts#new',    via: 'get'
   resources "contacts", only: [:new, :create]
+=======
+>>>>>>> Weather
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

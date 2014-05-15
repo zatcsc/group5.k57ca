@@ -53,3 +53,7 @@ gem 'bcrypt-ruby', '3.1.2'
 
 gem 'mail_form'
 gem 'simple_form'
+
+gem 'jslint_on_rails'
+gem 'rubocop', require: false
+
