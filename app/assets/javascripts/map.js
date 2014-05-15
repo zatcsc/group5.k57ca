@@ -1,14 +1,4 @@
-/* Constants declaration*/
-var HANOI_LONGITUDE = 105.85;
-var HANOI_LATITUDE = 21.011111;
-var GOOD_ZOOM_LEVEL  = 17;
-var MAP_ICON_SIZE = new google.maps.Size(71, 71);
-var SCALED_MAP_ICON_SIZE = new google.maps.Size(35, 35);
-var HANOI_CENTER = new google.maps.LatLng(HANOI_LATITUDE,HANOI_LONGITUDE);
-var ROADMAP = google.maps.MapTypeId.ROADMAP;
-var GOOD_MARKER_ANCHOR_POINT = new Point(0,-29);
-/* End constants */
-
+/* Classes declaration*/
 function MapIcon(url, size, origin, anchor, scaledSize){
   this.url = url;
   this.size = size;
@@ -25,6 +15,17 @@ function MapOption(center, mapTypeId, zoom){
 function Point(x,y){
   return new google.maps.Point(x,y);
 }
+/* END CLASSES DECLARATION */
+/* Constants declaration*/
+var HANOI_LONGITUDE = 105.85;
+var HANOI_LATITUDE = 21.011111;
+var GOOD_ZOOM_LEVEL  = 17;
+var MAP_ICON_SIZE = new google.maps.Size(71, 71);
+var SCALED_MAP_ICON_SIZE = new google.maps.Size(35, 35);
+var HANOI_CENTER = new google.maps.LatLng(HANOI_LATITUDE,HANOI_LONGITUDE);
+var ROADMAP = google.maps.MapTypeId.ROADMAP;
+var GOOD_MARKER_ANCHOR_POINT = new Point(0,-29);
+/* End constants */
 function respondToPlaceChange(map, infoWindow, marker, autocomplete){
   infoWindow.close();
   marker.setVisible(false);
@@ -58,6 +59,7 @@ function respondToPlaceChange(map, infoWindow, marker, autocomplete){
 }
 
 var hanoiMap;
+
 function initializeMap(whereToPlace,searchBox) {
   var mapOptions = new MapOption(HANOI_CENTER,ROADMAP,GOOD_ZOOM_LEVEL);  
   hanoiMap = new google.maps.Map(document.getElementById(whereToPlace),mapOptions);
@@ -72,8 +74,8 @@ function initializeMap(whereToPlace,searchBox) {
   var infoWindow = new google.maps.InfoWindow();
   var marker = new google.maps.Marker({ map: hanoiMap, anchorPoint: GOOD_MARKER_ANCHOR_POINT });
 
-  google.maps.event.addListener(autocomplete, 'place_changed',
-    function (){respondToPlaceChange(hanoiMap,infoWindow,marker,autocomplete)});
+  google.maps.event.addListener(autocomplete,'place_changed',
+    function(){respondToPlaceChange(hanoiMap,infoWindow,marker,autocomplete)});
   // Autocomplete.
   autocomplete.setTypes([]);      
 }

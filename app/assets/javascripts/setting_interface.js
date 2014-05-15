@@ -1,18 +1,20 @@
 var ready = function(){
+	var currentClass='';
+	var currentIconUrl='';
 	for (var i=0; i<IMPLEMENTED_FEATURE; ++i){
 		/*html element*/
-		var currentClass = ".panel-heading."+FEATURES[i];		
+		currentClass = ".panel-heading."+FEATURES[i];		
 		currentFeatureEl = $(currentClass);				
-		var currentIconUrl ="url('../assets/"+FEATURES[i]+".png')";				
+		currentIconUrl ="url('../assets/"+FEATURES[i]+".png')";				
 		currentFeatureEl.css("background-image",currentIconUrl);
 		currentFeatureEl.css("background-repeat","no-repeat");		
 		currentFeatureEl.css("background-position","10% 50%");		
 		currentFeatureEl.css("background-size","45px 40px");									
 	}	
-	for (var i=0; i<VEHICLE_TYPES.length; i++){
-		var currentClass = ".vehicle-type."+VEHICLE_TYPES[i];		
+	for (i=0; i<VEHICLE_TYPES.length; i++){
+		currentClass = ".vehicle-type."+VEHICLE_TYPES[i];		
 		var currentVehicleEl = $(currentClass);				
-		var currentIconUrl ="url('../assets/"+VEHICLE_TYPES[i]+".png')";	
+		currentIconUrl ="url('../assets/"+VEHICLE_TYPES[i]+".png')";	
 		currentVehicleEl.css("background-image",currentIconUrl);
 		currentVehicleEl.css("background-size","50% 100%");
 		currentVehicleEl.css("background-position","center");
@@ -37,13 +39,14 @@ var ready = function(){
 	$('.vehicle-type').on('click',function(event) {		
 		var oldChoosenVehicle = $('.'+VEHICLE_TYPES[chosenVehicleType]);			
 		oldChoosenVehicle.css('background-image',
-			"url('../assets/"+VEHICLE_TYPES[chosenVehicleType]+".png')")				
-		for (var i=0; i< VEHICLE_TYPES.length;++i)	
+			"url('../assets/"+VEHICLE_TYPES[chosenVehicleType]+".png')");
+		for (var i=0; i< VEHICLE_TYPES.length;++i)	{
 			if ( $(this).hasClass(VEHICLE_TYPES[i]) ){				
 				chosenVehicleType=i;				
-				$(this).css('background-image',"url('../assets/"+VEHICLE_TYPES[i]+"-clicked.png')")
+				$(this).css('background-image',"url('../assets/"+VEHICLE_TYPES[i]+"-clicked.png')");
 				break;				
 			}
+		}
 
 	});
 	$('.find-route').on('click',function(event){
@@ -53,7 +56,6 @@ var ready = function(){
 		calcRoute();
 	});	
 	$('.panel-title').css('margin-left','25%');
-}
-var IMPLEMENTED_FEATURE = 3;
+};
 $(document).ready(ready) ;
-$(document).on('page:load',ready)
+$(document).on('page:load',ready);

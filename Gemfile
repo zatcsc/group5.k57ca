@@ -50,3 +50,5 @@ end
 
 gem 'simplecov', :require => false, :group => :test
 gem 'bcrypt-ruby', '3.1.2'
+gem 'jslint_on_rails'
+gem 'rubocop', require: false
