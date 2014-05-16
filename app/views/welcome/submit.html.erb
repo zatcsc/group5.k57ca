@@ -1,20 +1,71 @@
+<script>
+    var geocoder;
+    function initialize() {
+        var input = /** @type {HTMLInputElement} */(
+                document.getElementById('geocoding-input'));
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        geocoder = new google.maps.Geocoder();
+        var infowindow = new google.maps.InfoWindow();
+
+        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+            infowindow.close();
+            var place = autocomplete.getPlace();
+            var address = '';
+            if (place.address_components) {
+                address = [(place.address_components[0] && place.address_components[0].short_name || ''), (place.address_components[1] && place.address_components[1].short_name || ''), (place.address_components[2] && place.address_components[2].short_name || '')].join(' ');
+            }
+            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+            infowindow.open(map, marker);
+        });
+        // Autocomplete.
+        autocomplete.setTypes([]);
+    }
+    function codeAddress() {
+        var address = document.getElementById("geocoding-input").value;
+        geocoder.geocode( { 'address': address}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                document.getElementById("jam_lat").value = results[0].geometry.location.lat();
+                document.getElementById("jam_lng").value = results[0].geometry.location.lng();
+                document.getElementById("jam_place").value = address;
+            } else {
+                alert("Geocode was not successful for the following reason: " + status);
+            }
+        });
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
 <h1>Database controller</h1>
 
-<p>Add new jam address</p>
-<%= form_tag("/add", :method => "post") do %>
-    <%= text_field_tag(:jam_lat) %>
-    <%= text_field_tag(:jam_lgn) %>
-    <%= text_field_tag(:jam_reason) %>
-    <%= submit_tag("Submit", :class => "btn") %>
-<% end %>
-
-<% if !flash[:error].nil? %>
-    <div class="alert alert-error">
-      <button type="button" class="close" data-dismiss="alert">x</button>
-      <strong><%= flash[:error] %></strong>
+<div class="container-fluid col-md-12">
+  <form class="form-inline" role="search">
+    <div class="form-group custom-searchbox-admin">
+      <label class="sr-only" for="exampleInputEmail2">Email address</label>
+      <input id="geocoding-input" type="text" class="form-control custom-form-admin" placeholder='Search' autocomplete="on" />
     </div>
-<% end %>
+    <input type="button" value="Geocode" onclick="codeAddress()">
+  </form>
+</div>
 
-<% @jam_places.each do |t| %>
-    <li><%= t.lat %>  <%= t.lng %> <%= t.reason %></li>
-<% end %>
+<div class="container-fluid">
+    <h3>Add new jam address</h3>
+    <%= form_tag("/add", :method => "post") do %>
+        <%= text_field_tag :jam_lat, nil, placeholder: 'Enter Latitude' %>
+        <%= text_field_tag :jam_lng, nil, placeholder: 'Enter Longitude' %>
+        <%= text_field_tag :jam_place, nil, class: 'no-border' %>
+        <%= text_field_tag :jam_reason, nil,  placeholder: 'Enter the reason'  %>
+        <%= submit_tag("Submit") %>
+    <% end %>
+
+    <% if !flash[:error].nil? %>
+        <div class="alert alert-error">
+          <button type="button" class="close" data-dismiss="alert">x</button>
+          <strong><%= flash[:error] %></strong>
+        </div>
+    <% end %>
+
+    <% @jam_places.each do |t| %>
+        <li><%= t.place %> <%= t.lat %>  <%= t.lng %> <%= t.reason %></li>
+    <% end %>
+</div>
