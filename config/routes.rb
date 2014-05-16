@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   match '/home', to: 'welcome#map', via: 'get'
   match '/add', to: 'welcome#add', via: 'post'
   match '/submit', to: 'welcome#submit', via: 'get'
+  match '/clear', to: 'welcome#clear', via: 'post'
 
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'

@@ -17,9 +17,18 @@ class WelcomeController < ApplicationController
   end
 
   def add
-    new_jam = Jam.create(:lat => params[:jam_lat], :lng => params[:jam_lng], :reason => params[:jam_reason], :place => params[:jam_place])
+    new_jam = Jam.create(:lat => params[:jam_lat], :lng => params[:jam_lng],
+                         :reason => params[:jam_reason], :place => params[:jam_place])
     if !new_jam.valid?
       flash[:error] = new_jam.errors.full_messages.join(" ").html_safe
+    end
+    redirect_to :action => 'submit'
+  end
+
+  def clear
+    params[:jam_checkbox].each do |check|
+      target = Jam.find_by_id(check)
+      target.destroy
     end
     redirect_to :action => 'submit'
   end

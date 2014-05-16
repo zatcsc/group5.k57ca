@@ -7,7 +7,7 @@
         geocoder = new google.maps.Geocoder();
         var infowindow = new google.maps.InfoWindow();
 
-        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        google.maps.event.addListener(autocomplete, 'place_changed', function () {
             infowindow.close();
             var place = autocomplete.getPlace();
             var address = '';
@@ -21,14 +21,14 @@
         autocomplete.setTypes([]);
     }
     function codeAddress() {
-        var address = document.getElementById("geocoding-input").value;
-        geocoder.geocode( { 'address': address}, function(results, status) {
+        var address = document.getElementById('geocoding-input').value;
+        geocoder.geocode({ 'address': address}, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
-                document.getElementById("jam_lat").value = results[0].geometry.location.lat();
-                document.getElementById("jam_lng").value = results[0].geometry.location.lng();
-                document.getElementById("jam_place").value = address;
+                document.getElementById('jam_lat').value = results[0].geometry.location.lat();
+                document.getElementById('jam_lng').value = results[0].geometry.location.lng();
+                document.getElementById('jam_place').value = address;
             } else {
-                alert("Geocode was not successful for the following reason: " + status);
+                alert('Geocode was not successful for the following reason: ' + status);
             }
         });
     }
@@ -38,34 +38,40 @@
 
 <h1>Database controller</h1>
 
-<div class="container-fluid col-md-12">
-  <form class="form-inline" role="search">
-    <div class="form-group custom-searchbox-admin">
-      <label class="sr-only" for="exampleInputEmail2">Email address</label>
-      <input id="geocoding-input" type="text" class="form-control custom-form-admin" placeholder='Search' autocomplete="on" />
+<div class='container'>
+  <form class='form-inline' role='search'>
+    <div class='form-group custom-searchbox-admin'>
+      <label class='sr-only' for='exampleInputEmail2'>Email address</label>
+      <input id='geocoding-input' type='text' class='form-control custom-form-admin' placeholder='Search' autocomplete='on'/>
     </div>
-    <input type="button" value="Geocode" onclick="codeAddress()">
+    <input class='btn btn-primary' type='button' value='Geocode' onclick='codeAddress()'>
   </form>
-</div>
 
-<div class="container-fluid">
-    <h3>Add new jam address</h3>
-    <%= form_tag("/add", :method => "post") do %>
-        <%= text_field_tag :jam_lat, nil, placeholder: 'Enter Latitude' %>
-        <%= text_field_tag :jam_lng, nil, placeholder: 'Enter Longitude' %>
-        <%= text_field_tag :jam_place, nil, class: 'no-border' %>
-        <%= text_field_tag :jam_reason, nil,  placeholder: 'Enter the reason'  %>
-        <%= submit_tag("Submit") %>
-    <% end %>
+  Add new jam address
+  <%= form_tag('/add', :method => 'post') do %>
+      <%= text_field_tag :jam_lat, nil, placeholder: 'Enter Latitude' %>
+      <%= text_field_tag :jam_lng, nil, placeholder: 'Enter Longitude' %>
+      <br>
+      <%= text_field_tag :jam_place, nil, class: 'no-border' %>
+      <%= text_field_tag :jam_reason, nil, placeholder: 'Enter the reason' %>
+      <br>
+      <%= submit_tag('Submit', :class => 'btn btn-success') %>
+  <% end %>
 
-    <% if !flash[:error].nil? %>
-        <div class="alert alert-error">
-          <button type="button" class="close" data-dismiss="alert">x</button>
-          <strong><%= flash[:error] %></strong>
-        </div>
-    <% end %>
+  <% if !flash[:error].nil? %>
+      <div class='alert alert-error'>
+        <button type='button' class='close' data-dismiss='alert'>x</button>
+        <strong><%= flash[:error] %></strong>
+      </div>
+  <% end %>
 
-    <% @jam_places.each do |t| %>
-        <li><%= t.place %> <%= t.lat %>  <%= t.lng %> <%= t.reason %></li>
-    <% end %>
+  <%= form_tag('/clear', :method => 'post') do %>
+      <ul style='list-style-type:none;'>
+        <% @jam_places.each do |t| %>
+            <li> <%= check_box_tag 'jam_checkbox[]', t.id %> <%= t.place %> <%= t.lat %>  <%= t.lng %> <%= t.reason %></li>
+        <% end %>
+      </ul>
+      <%= submit_tag('Delete checked places', :class => 'btn btn-danger') %>
+  <% end %>
+
 </div>
