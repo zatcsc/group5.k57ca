@@ -74,7 +74,7 @@ function initializeMap(whereToPlace, searchBox) {
 
     google.maps.event.addListener(autocomplete, 'place_changed',
         function () {
-            respondToPlaceChange(hanoiMap, infoWindow, marker, autocomplete)
+            respondToPlaceChange(hanoiMap, infoWindow, marker, autocomplete);
         });
     // Autocomplete.
     autocomplete.setTypes([]);

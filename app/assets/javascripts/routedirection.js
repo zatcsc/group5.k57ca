@@ -5,8 +5,8 @@ var end;
 function initializeRouteDirection() {
   var startInput = document.getElementById("start-place");
   var endInput = document.getElementById("end-place");
-  var autocompleteStartInput = new google.maps.places.Autocomplete(startInput)
-  var autocompleteEndInput = new google.maps.places.Autocomplete(endInput)
+  var autocompleteStartInput = new google.maps.places.Autocomplete(startInput);
+  var autocompleteEndInput = new google.maps.places.Autocomplete(endInput);
 
   google.maps.event.addListener(autocompleteStartInput,'place_changed',function(){
     start = autocompleteStartInput.getPlace().geometry.location;    
@@ -22,8 +22,8 @@ function calcRoute() {
   // Create a renderer for directions and bind it to the map.
   var rendererOptions = {
     map: hanoiMap
-  }
-  var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions)
+  };
+  var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
 
   // Instantiate an info window to hold step text.
   var stepDisplay = new google.maps.InfoWindow();  

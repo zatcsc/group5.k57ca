@@ -8,6 +8,6 @@ var HANOI_CENTER = new google.maps.LatLng(HANOI_LATITUDE,HANOI_LONGITUDE);
 var ROADMAP = google.maps.MapTypeId.ROADMAP;
 var GOOD_MARKER_ANCHOR_POINT = new google.maps.Point(0,-29);
 var VEHICLE_TYPES= new Array("car","bus","bike","walk");
-var TRAVEL_MODES = new Array("DRIVING","TRANSIT","BICYCLING","WALKING")	
+var TRAVEL_MODES = new Array("DRIVING","TRANSIT","BICYCLING","WALKING");	
 var FEATURES = new Array("find-route","traffic-information","weather","traffic-statistic");
 /* End constants */

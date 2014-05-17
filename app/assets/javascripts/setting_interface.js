@@ -37,13 +37,13 @@ var ready = function(){
 	$('.vehicle-type').on('click',function(event) {		
 		var oldChoosenVehicle = $('.'+VEHICLE_TYPES[chosenVehicleType]);			
 		oldChoosenVehicle.css('background-image',
-			"url('../assets/"+VEHICLE_TYPES[chosenVehicleType]+".png')")				
+			"url('../assets/"+VEHICLE_TYPES[chosenVehicleType]+".png')");				
 		for (var i=0; i< VEHICLE_TYPES.length;++i)	
 			if ( $(this).hasClass(VEHICLE_TYPES[i]) ){				
 				chosenVehicleType=i;				
-				$(this).css('background-image',"url('../assets/"+VEHICLE_TYPES[i]+"-clicked.png')")
+				$(this).css('background-image',"url('../assets/"+VEHICLE_TYPES[i]+"-clicked.png')");
 				break;				
-			}
+			};
 
 	});
 	$('.find-route').on('click',function(event){
@@ -53,7 +53,7 @@ var ready = function(){
 		calcRoute();
 	});	
 	$('.panel-title').css('margin-left','25%');
-}
+};
 var IMPLEMENTED_FEATURE = 3;
 $(document).ready(ready) ;
-$(document).on('page:load',ready)
+$(document).on('page:load',ready);

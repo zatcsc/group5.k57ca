@@ -20,7 +20,9 @@ class WelcomeController < ApplicationController
     new_jam = Jam.create(:lat => params[:jam_lat], :lng => params[:jam_lng],
                          :reason => params[:jam_reason], :place => params[:jam_place])
     if !new_jam.valid?
-      flash[:error] = new_jam.errors.full_messages.join(" ").html_safe
+      flash[:error] = "There were some input errors. Please input again."
+    else
+      flash[:success] = "Added successfully."   
     end
     redirect_to :action => 'submit'
   end

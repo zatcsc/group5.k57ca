@@ -53,3 +53,4 @@ gem 'bcrypt-ruby', '3.1.2'
 
 gem 'mail_form'
 gem 'simple_form'
+gem 'jquery-turbolinks'
