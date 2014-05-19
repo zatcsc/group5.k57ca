@@ -40,12 +40,12 @@ gem 'debugger', group: [:development, :test]
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 group :test, :development do
-	gem 'rspec-rails', "~>2.14"
+  gem 'rspec-rails', "~>2.14"
 end
 
 group :test do
-	gem 'capybara', "2.1.0"
-	gem 'factory_girl_rails', '4.2.1'
+  gem 'capybara', "2.1.0"
+  gem 'factory_girl_rails', '4.2.1'
 end
 
 gem 'simplecov', :require => false, :group => :test
@@ -57,3 +57,4 @@ gem 'simple_form'
 gem 'jslint_on_rails'
 gem 'rubocop', require: false
 
+gem 'jquery-turbolinks'

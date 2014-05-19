@@ -68,9 +68,18 @@ h1 {
 	width: 500px;
 }
 
+.custom-searchbox-admin {
+    width: 400px;
+}
+
 .custom-form {
 	width: 490px !important;
 }
+
+.custom-form-admin {
+    width: 490px !important;
+}
+
 .nopad {
 	padding: 0 !important;
 }
@@ -85,7 +94,7 @@ h1 {
 	border-radius: 0px !important;
 	color: #ffffff !important;
 }
-#pac-input {
+#pac-input #geocoding-input{
 	background-color: #fff;
 	padding: 0 11px 0 13px;
 	width: 400px;
@@ -95,7 +104,7 @@ h1 {
 	text-overflow: ellipsis;
 }
 
-#pac-input:focus {
+#pac-input:focus #geocoding-input{
 	border-color: #4d90fe;
 	margin-left: -1px;
 	padding-left: 14px; /* Regular padding-left + 1. */
@@ -153,7 +162,6 @@ footer ul li{
 		padding-top: 20px;
 		overflow-x: hidden;
 		overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-		background-color: #f5f5f5;
 		border-right: 1px solid #eee;
 		margin-bottom: 0 !important;
 	}
@@ -232,9 +240,8 @@ footer ul li{
 }
 /* mixins, variables, etc. */
 
-$grayMediumLight: #eaeaea;
 
-@mixin box_sizing {
+/* @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -250,12 +257,11 @@ $grayMediumLight: #eaeaea;
   @include box_sizing;
 }
 /* sidebar */
-$grayMediumLight: #eaeaea;
 .aside {
   section {
     padding: 10px 0;
-    border-top: 1px solid $grayLighter;
-    &:first-child {
+    border-top: 1px solid ;
+    first-child {
       border: 0;
       padding-top: 0;
     }
@@ -319,6 +325,7 @@ $grayMediumLight: #eaeaea;
 .vehicle-type{
 	float: left;
 }
+
 /* Weather */
 .weather-select-box{
 	width: 100%;
@@ -331,4 +338,8 @@ $grayMediumLight: #eaeaea;
 }
 .current-weather-content{
 	margin-left: 10px;
+}
+
+.no-border {
+    display: none;
 }

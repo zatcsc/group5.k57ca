@@ -1,2 +1,9 @@
 <%= render 'layouts/left_slidebar' %>
 <%= render 'layouts/map_canvas' %>
+<%= javascript_tag do %>
+    <% @jam_places.each do |jam_place| %>
+        jamLat.push(<%= jam_place.lat %>);
+        jamLgn.push(<%= jam_place.lng %>);
+        jamReason.push("<%= jam_place.reason %>");
+    <% end %>
+<% end %>

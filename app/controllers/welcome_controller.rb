@@ -1,18 +1,44 @@
 require 'open-uri'
 class WelcomeController < ApplicationController
   def home
+
   end
 
   def about
-    render 'about'
+    render "about"
   end
 
   def contact
-    render 'contact'
+    render "contact"
+  end
+
+  def submit
+    @jam_places = Jam.all
+    render "submit"
+  end
+
+  def add
+    new_jam = Jam.create(:lat => params[:jam_lat], :lng => params[:jam_lng],
+                         :reason => params[:jam_reason], :place => params[:jam_place])
+    if !new_jam.valid?
+      flash[:error] = "There were some input errors. Please input again."
+    else
+      flash[:success] = "Added successfully."   
+    end
+    redirect_to :action => 'submit'
+  end
+
+  def clear
+    params[:jam_checkbox].each do |check|
+      target = Jam.find_by_id(check)
+      target.destroy
+    end
+    redirect_to :action => 'submit'
   end
 
   def map
     if signed_in?
+      @jam_places = Jam.all
       render 'map'
     else
       redirect_to signin_path
