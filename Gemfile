@@ -12,14 +12,14 @@ gem 'sass-rails', '~> 4.0.1'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# See http://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+# Turbolinks makes following links in your web application faster. Read more: http://github.com/rails/turbolinks
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+# Build JSON APIs with ease. Read more: http://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
@@ -40,12 +40,12 @@ gem 'debugger', group: [:development, :test]
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 group :test, :development do
-	gem 'rspec-rails', "~>2.14"
+  gem 'rspec-rails', "~>2.14"
 end
 
 group :test do
-	gem 'capybara', "2.1.0"
-	gem 'factory_girl_rails', '4.2.1'
+  gem 'capybara', "2.1.0"
+  gem 'factory_girl_rails', '4.2.1'
 end
 
 gem 'simplecov', :require => false, :group => :test
@@ -53,3 +53,8 @@ gem 'bcrypt-ruby', '3.1.2'
 
 gem 'mail_form'
 gem 'simple_form'
+
+gem 'jslint_on_rails'
+gem 'rubocop', require: false
+
+gem 'jquery-turbolinks'

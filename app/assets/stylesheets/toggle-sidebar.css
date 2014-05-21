@@ -1,4 +1,4 @@
-/*#mapCanvas {
+#mapCanvas {
     width: 1020px;
     height: 545px;
     border: 0px;
@@ -20,8 +20,6 @@
 }
 
 
-
-
 .accordion-heading .accordion-toggle-small {
     display: block;
     padding: 4px 8px; /*8px 15px;*/
@@ -40,4 +38,4 @@
     overflow-y: scroll;
     display: inline-block;
     float: none; /* Very important */
-}*/
+}
