@@ -1,41 +1,3 @@
-<script>
-    var geocoder;
-    function initializeSubmit() {
-        var input = /** @type {HTMLInputElement} */(
-                document.getElementById('geocoding-input'));
-        var autocomplete = new google.maps.places.Autocomplete(input);
-        geocoder = new google.maps.Geocoder();
-        var infowindow = new google.maps.InfoWindow();
-
-        google.maps.event.addListener(autocomplete, 'place_changed', function () {
-            infowindow.close();
-            var place = autocomplete.getPlace();
-            var address = '';
-            if (place.address_components) {
-                address = [(place.address_components[0] && place.address_components[0].short_name || ''), (place.address_components[1] && place.address_components[1].short_name || ''), (place.address_components[2] && place.address_components[2].short_name || '')].join(' ');
-            }
-            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-            infowindow.open(map);
-        });
-        // Autocomplete.
-        autocomplete.setTypes([]);
-    }
-    function codeAddress() {
-        var address = document.getElementById('geocoding-input').value;
-        geocoder.geocode({ 'address': address}, function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                document.getElementById('jam_lat').value = results[0].geometry.location.lat();
-                document.getElementById('jam_lng').value = results[0].geometry.location.lng();
-                document.getElementById('jam_place').value = address;
-            } else {
-                alert('Geocode was not successful for the following reason: ' + status);
-            }
-        });
-    }
-
-    initializeSubmit();
-</script>
-
 <h1>Submit new location of traffic jams</h1>
 
 <div class='container'>
@@ -85,3 +47,39 @@
   <% end %>
 
 </div>
+<script>
+    var geocoder;
+    function initializeSubmit() {        
+        var input = /** @type {HTMLInputElement} */(
+                document.getElementById('geocoding-input'));                
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        geocoder = new google.maps.Geocoder();
+        var infowindow = new google.maps.InfoWindow();
+
+        google.maps.event.addListener(autocomplete, 'place_changed', function () {
+            infowindow.close();
+            var place = autocomplete.getPlace();
+            var address = '';
+            if (place.address_components) {
+                address = [(place.address_components[0] && place.address_components[0].short_name || ''), (place.address_components[1] && place.address_components[1].short_name || ''), (place.address_components[2] && place.address_components[2].short_name || '')].join(' ');
+            }
+            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+            infowindow.open(hanoiMap,marker);
+        });
+        // Autocomplete.
+        autocomplete.setTypes([]);
+    }
+    function codeAddress() {
+        var address = document.getElementById('geocoding-input').value;
+        geocoder.geocode({ 'address': address}, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                document.getElementById('jam_lat').value = results[0].geometry.location.lat();
+                document.getElementById('jam_lng').value = results[0].geometry.location.lng();
+                document.getElementById('jam_place').value = address;
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+  initializeSubmit();
+</script>
