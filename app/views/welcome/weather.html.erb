@@ -1,8 +1,8 @@
 <div class="span4 current-weather-content">
 <% img_url = "weather/"+@data['weather'][0]['icon']+".png"  %>
-<h3><%= image_tag(img_url) %> <%= @data['name']  %> </h3>
+<h3 class="text-in-weather"><%= image_tag(img_url) %> <%= @data['name']  %> </h3>
 
-<h2><%= (@data['main']['temp']-272.5).round(2) %>°C</h2>
+<h2 class="text-in-weather"><%= (@data['main']['temp']-272.5).round(2) %>°C</h2>
  <%= @data['weather'][0]['description'] %>
 <p></p><div id="date_m"><%= Time.now %></div><p></p>
 

@@ -343,3 +343,6 @@ footer ul li{
 .no-border {
     display: none;
 }
+.text-in-weather{
+	color: black !important
+}
