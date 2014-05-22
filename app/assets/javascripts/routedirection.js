@@ -21,7 +21,7 @@ function attachInstructionText(marker, text) {
 		// Open an info window when the marker is clicked on,
 		// containing the text of the step.
 		stepDisplay.setContent(text);
-		stepDisplay.open(hanoiMap);
+		stepDisplay.open(hanoiMap, marker);
 	});
 }
 
