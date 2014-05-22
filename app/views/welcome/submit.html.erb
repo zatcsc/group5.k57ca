@@ -1,6 +1,6 @@
 <script>
     var geocoder;
-    function initialize() {
+    function initializeSubmit() {
         var input = /** @type {HTMLInputElement} */(
                 document.getElementById('geocoding-input'));
         var autocomplete = new google.maps.places.Autocomplete(input);
@@ -15,7 +15,7 @@
                 address = [(place.address_components[0] && place.address_components[0].short_name || ''), (place.address_components[1] && place.address_components[1].short_name || ''), (place.address_components[2] && place.address_components[2].short_name || '')].join(' ');
             }
             infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-            infowindow.open(map, marker);
+            infowindow.open(map);
         });
         // Autocomplete.
         autocomplete.setTypes([]);
@@ -33,7 +33,7 @@
         });
     }
 
-    google.maps.event.addDomListener(window, 'load', initialize);
+    initializeSubmit();
 </script>
 
 <h1>Submit new location of traffic jams</h1>
