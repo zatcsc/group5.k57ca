@@ -1,8 +1,6 @@
 require 'open-uri'
-class WelcomeController < ApplicationController
-  def home
 
-  end
+class WelcomeController < ApplicationController
 
   def about
     render "about"
@@ -13,17 +11,21 @@ class WelcomeController < ApplicationController
   end
 
   def submit
-    @jam_places = Jam.all
-    render "submit"
+    if signed_in?
+      @jam_places = Jam.all
+      render "submit"
+    else
+      redirect_to signin_path
+    end
   end
 
   def add
     new_jam = Jam.create(:lat => params[:jam_lat], :lng => params[:jam_lng],
-                         :reason => params[:jam_reason], :place => params[:jam_place])
+    :reason => params[:jam_reason], :place => params[:jam_place])
     if !new_jam.valid?
       flash[:error] = "There were some input errors. Please input again."
     else
-      flash[:success] = "Added successfully."   
+      flash[:success] = "Added successfully."
     end
     redirect_to :action => 'submit'
   end
@@ -50,7 +52,6 @@ class WelcomeController < ApplicationController
     @xml_url = 'http://api.openweathermap.org/data/2.5/weather?id=' + @city_id
     @weather_xml = open(@xml_url).read
     @data = ActiveSupport::JSON.decode(@weather_xml)
-    # @temp = @data['main']['temp'] - 272.15
     respond_to do |format|
       format.html { render 'weather', layout: false }
     end
